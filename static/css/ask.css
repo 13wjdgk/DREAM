@@ -28,7 +28,14 @@ li{
     padding: 20px 0;
     width: 50%;
 }
-.respond{
+.respondo{
+    color: blue;
+    display: inline-block;
+    padding: 20px 0;
+    width: 10%;
+}
+.respondx{
+    color: red;
     display: inline-block;
     padding: 20px 0;
     width: 10%;

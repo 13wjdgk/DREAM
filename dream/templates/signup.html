@@ -1,0 +1,140 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<link rel="stylesheet" href="{% static 'css/signup.css'%}">
+<div class="b-div">
+    <div class="s-div">
+        <form action="#">
+            <h2>회원가입</h2>
+            <hr>
+            <h5>로그인 정보</h5>
+            <div class="login_info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">
+                            <p style="display: inline;">아이디</p>
+                        </div>
+                        <div class="col-4">
+                            <input class=" id_form form-control form-control-sm" type="text" placeholder="아이디를 입력하세요" aria-label=".form-control-sm example">
+                        </div>
+                        <div class="col-1">
+
+                            <button class="" type="submit">중복확인</button>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                        <p style="display: inline;">비밀번호</p>
+                        </div>
+                        <div class="col-4">
+                        <input class=" id_form form-control form-control-sm" type="text" placeholder="아이디를 입력하세요" aria-label=".form-control-sm example">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p style="display: inline;">비밀번호 확인</p>
+                        </div>
+                        <div class="col-4">
+                            <input class=" id_form form-control form-control-sm" type="text" placeholder="아이디를 입력하세요" aria-label=".form-control-sm example">
+                        </div>
+                        <div class="col-1">
+
+                            <button class="" type="submit">확인</button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+            </div>
+            
+            <hr>
+            <h5>회원 정보</h5>
+            <div class="login_info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">
+                            <p style="display: inline;">이름</p>
+                        </div>
+                        <div class="col-4">
+                            <input class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                        <p style="display: inline;">출생년도</p>
+                        </div>
+                        <div class="col">
+                            <input style="width: 10%; display: inline;"class=" id_form form-control form-control-sm" type="text" aria-label=".form-control-sm example"><p style="display: inline;" > 년</p>
+                        
+                            <input style="width: 5%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"><p style="display: inline;" > 월</p>
+                        
+                        
+                            <input style="width: 5%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"><p style="display: inline;" > 일</p>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p style="display: inline;"> 이메일 </p>
+                        </div>
+                        <div class="col input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                            <span class="input-group-text">@</span>
+                            <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                          </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                        <p style="display: inline;">전화번호</p>
+                        </div>
+                        <div class="col">
+                            <input style="width: 7%; display: inline;"class=" id_form form-control form-control-sm" type="text" aria-label=".form-control-sm example"><p style="display: inline;" > -</p>
+                        
+                            <input style="width: 7%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"><p style="display: inline;" > -</p>
+                               
+                            <input style="width: 7%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example">
+                        </div>
+                        
+                    </div>
+                    <div style="padding-top: 3%;" class="row">
+                        <div class="col-2">
+                            <p style="display: inline;">본인확인</p>
+                        </div>
+            
+                        <div class="col">
+
+                            <button style="width:100%" class="" type="submit">본인확인</button>
+
+                        </div>
+                    </div>
+                    <div style="padding-top: 3%;" class="row">
+                        <div class="col-2">
+                            <p style="display: inline;">카드등록</p>
+                        </div>
+            
+                        <div class="col">
+
+                            <button style="width:100%" class="" type="submit">카드등록</button>
+
+                        </div>
+                    </div>
+                </div>    
+                
+                
+
+            </div>
+        </form>
+    </div>
+     
+</div>
+
+{% endblock %}
+
+

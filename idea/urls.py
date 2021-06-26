@@ -19,4 +19,5 @@ import dream.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',dream.views.main,name='main'),
+    path('signup/',dream.views.signup,name='signup'),
 ]

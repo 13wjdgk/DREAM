@@ -1,0 +1,28 @@
+/* 가운데선 */
+hr{
+    background-color: black;
+    height: 2px;
+}
+
+h1{
+    font-size: 45px;
+}
+
+h3{
+    display: inline;
+}
+.form{
+    width: 70%;
+    margin:0 auto;
+}
+
+/* 신고유형 */
+.notify{
+    border-radius: 4px;
+    width: 30%;
+    height: 25px;
+}
+
+.button{
+    text-align: center;
+}

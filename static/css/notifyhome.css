@@ -1,0 +1,45 @@
+/* 가운데선 */
+hr{
+    background-color: black;
+    height: 2px;
+}
+
+h1{
+    font-size: 45px;
+}
+
+/* 약관 전체 */
+.agree{
+    width: 70%;
+    margin:0 auto;
+    
+}
+
+/* 약관 박스 */
+.greedTxt{
+    padding: 20px 15px;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid black;
+}
+/* 체크 박스 */
+.check{
+    text-align: center;
+}
+/* 인증 */
+.certify{
+    width: 70%;
+    margin:0 auto;
+}
+/* 본인인증 버튼 */
+.button{
+    text-align: center;
+}
+
+.btn{
+    text-align: center;
+    border-radius: 10px;
+    width: 50%;
+    height: 5%;
+    background-color: #F8E982;
+}

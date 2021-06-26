@@ -19,4 +19,8 @@ import dream.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',dream.views.main,name='main'),
+    path('point',dream.views.point,name='point'),
+    path('notifyhome',dream.views.notifyhome,name="notifyhome"),
+    path('notify',dream.views.notify,name="notify"),
+    
 ]

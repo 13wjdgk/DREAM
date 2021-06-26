@@ -22,5 +22,6 @@ urlpatterns = [
     path('point',dream.views.point,name='point'),
     path('notifyhome',dream.views.notifyhome,name="notifyhome"),
     path('notify',dream.views.notify,name="notify"),
+    path('notifycom',dream.views.notifycom,name="notifycom"),
     
 ]

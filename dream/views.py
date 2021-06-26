@@ -12,3 +12,6 @@ def notifyhome(request):
 
 def notify(request):
     return render(request,'notify.html')
+
+def notifycom(request):
+    return render(request,"notifycom.html")

@@ -1,0 +1,40 @@
+/* 가운데선 */
+hr{
+    background-color: black;
+    height: 2px;
+}
+
+h1{
+    font-size: 45px;
+}
+/* 리스트 */
+ul{
+    list-style: none;
+}
+
+li{
+    width: 100%;
+    height: 50px;
+    border-bottom: #efefef solid 1px;
+}
+/* 리스트 내용 */
+.title{
+    display: inline-block;
+    padding: 20px 0;
+    width: 30%;
+}
+.content{
+    display: inline-block;
+    padding: 20px 0;
+    width: 50%;
+}
+.respond{
+    display: inline-block;
+    padding: 20px 0;
+    width: 10%;
+}
+/* 버튼 */
+.btn{
+    width: 10%;
+    float: right;
+}

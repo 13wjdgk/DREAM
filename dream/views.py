@@ -15,3 +15,6 @@ def notify(request):
 
 def notifycom(request):
     return render(request,"notifycom.html")
+
+def ask(request):
+    return render(request,"ask.html")

@@ -1,9 +1,58 @@
 {% extends 'base.html' %}
 {% load static %}
-<table class="table">
-
-    
-</table>
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/ask.css' %}">
+{% endblock %}
 {% block content %}
+<div class="container">
+    <div>
+        <h1><strong>문의/건의</strong></h1>
+        <hr>
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                <div class="title">제목입니다</div>
+                <div class="content"><a href="">내용내용</a></div>
+                <div class="respond">답변완료</div>
+            </li>
+            <li>
+                <div class="title">제목입니다</div>
+                <div class="content"><a href="">내용내용</a></div>
+                <div class="respond">답변완료</div>
+            </li>
+            <li>
+                <div class="title">제목입니다</div>
+                <div class="content"><a href="">내용내용</a></div>
+                <div class="respond">답변완료</div>
+            </li>
+            <li>
+                <div class="title">제목입니다</div>
+                <div class="content"><a href="">내용내용</a></div>
+                <div class="respond">답변완료</div>
+            </li>
+            <li>
+                <div class="title">제목입니다</div>
+                <div class="content"><a href="">내용내용</a></div>
+                <div class="respond">답변완료</div>
+            </li>
+            <li>
+                <div class="title">제목입니다</div>
+                <div class="content"><a href="">내용내용</a></div>
+                <div class="respond">답변완료</div>
+            </li>
+            <li>
+                <div class="title">제목입니다</div>
+                <div class="content"><a href="">내용내용</a></div>
+                <div class="respond">답변완료</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="button">
+        <button type="button" class="btn">글작성</button>
+    </div>
+</div>
 
 {% endblock %}

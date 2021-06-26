@@ -6,3 +6,6 @@ def Info(request):
 
 def main(request):
     return render(request,'main.html')
+
+def payment(request):
+    return render(request,'payment.html')

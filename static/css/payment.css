@@ -1,0 +1,29 @@
+/* .container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 30% 70%;
+} */
+
+.top{
+    background-color: #C4C4C4;
+    height: 250px;
+    width: 100%;
+    display: flex;
+}
+
+.money{
+    padding-left: 60%;
+    padding-top: 200px;
+    font-size: 30px;
+}
+
+.center{
+
+}
+
+p{
+    font-size: 20px;
+}
+
+
+

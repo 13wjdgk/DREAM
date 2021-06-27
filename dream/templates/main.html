@@ -1,9 +1,51 @@
-
 {% extends 'base.html' %}
 {% load static %}
+{% block extrahead %}
 <link rel="stylesheet" href="{% static 'css/main.css'%}">
-{% block content %}
+<div class="main_photo"></div>
+<div class="confirmation">
+    <p class="balance_label">잔액 현황</p>
+    <p class="balance">15,000원</p>
+    <p class="pay"><a href="#">결제하기→</a></p>
+    <p class="breakdown"><a href="#">사용내역</a></p>
+</div>
+<div class="search_bar">
+    <form action="#" class="search_bar2">
+        <input type="text" placeholder="우리지역 가맹점 찾기">
+    </form>
+</div>
 
+    <div class ="button_in">
+        <div class="b1_c">
+            <div class="button1_top_wrap">
+                <form action="#">
+                    <button class="button1_top">꿈나무 카드<br>가맹점 찾기</button>
+                </form>
+            </div>
+            <hr>
+            <div class="button1_bottom_wrap">
+                <form action="#">
+                    <button class="button1_bottom">선한 영향력<br>가게 찾기</button>
+                </form>
+            </div>
+        </div>
+        <div class="b2_c">
+            <form action="#">
+                <button class="button2">배달의 민족</button>
+            </form>
+        </div>
+        <div class="b3_c">
+            <form action="#">
+                <button class="button3">포인트 기부</button>
+            </form>
+        </div>
+    </div>
+
+
+<br><br><br>
+<a href="{% url 'login' %}">로그인</a>
 {% endblock %}
+
+
 
 

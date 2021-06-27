@@ -96,6 +96,11 @@ p a:visited { color: black;}
 
 p a:link {color: black;}
 
-.remember{
-    float: left;
+.check{
+    text-align: left;
+}
+
+.box{
+    width: 12px;
+    height: 12px;
 }

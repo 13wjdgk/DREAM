@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',dream.views.main,name='main'),
     path('/login', dream.views.login_view, name='login'),
+    path('signup/',dream.views.signup,name='signup'),
+
 ]

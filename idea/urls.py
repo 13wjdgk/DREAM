@@ -1,3 +1,4 @@
+
 """idea URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -21,5 +22,8 @@ urlpatterns = [
     path('',dream.views.main,name='main'),
     path('/login', dream.views.login_view, name='login'),
     path('signup/',dream.views.signup,name='signup'),
+    path('Info/',dream.views.Info,name='Info'),
+    path('payment/',dream.views.payment,name='payment'),
 
 ]
+

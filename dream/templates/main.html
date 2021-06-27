@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block extrahead %}
+{% block content %}
 <link rel="stylesheet" href="{% static 'css/main.css'%}">
 <div class="main_photo"></div>
 <div class="confirmation">
@@ -15,31 +15,33 @@
     </form>
 </div>
 
-    <div class ="button_in">
-        <div class="b1_c">
-            <div class="button1_top_wrap">
-                <form action="#">
-                    <button class="button1_top">꿈나무 카드<br>가맹점 찾기</button>
-                </form>
-            </div>
-            <hr>
-            <div class="button1_bottom_wrap">
-                <form action="#">
-                    <button class="button1_bottom">선한 영향력<br>가게 찾기</button>
-                </form>
-            </div>
-        </div>
-        <div class="b2_c">
+<div class ="button_in">
+    <div class="b1_c">
+        <div class="button1_top_wrap">
             <form action="#">
-                <button class="button2">배달의 민족</button>
+                <button class="button1_top">꿈나무 카드<br>가맹점 찾기</button>
             </form>
         </div>
-        <div class="b3_c">
+        <hr class="hr_">
+        <div class="button1_bottom_wrap">
             <form action="#">
-                <button class="button3">포인트 기부</button>
+                <button class="button1_bottom">선한 영향력<br>가게 찾기</button>
             </form>
         </div>
     </div>
+    <div class="b2_c">
+        <form action="#">
+            <button class="button2">배달의 민족</button>
+        </form>
+    </div>
+    <div class="b3_c">
+        <form action="#">
+            <button class="button3">포인트 기부</button>
+        </form>
+    </div>
+</div>    
+
+
 
 
 <br><br><br>

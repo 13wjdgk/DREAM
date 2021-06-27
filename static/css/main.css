@@ -87,7 +87,7 @@ input:focus {
     font-size: 15px;
 }
 
-hr {
+hr.hr_ {
     margin: 0;
     border: 0;
     height: 1px;

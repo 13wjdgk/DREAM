@@ -20,15 +20,15 @@ import dream.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',dream.views.main,name='main'),
-    path('/login', dream.views.login_view, name='login'),
+    path('login/', dream.views.login_view, name='login'),
     path('signup/',dream.views.signup,name='signup'),
     path('Info/',dream.views.Info,name='Info'),
     path('payment/',dream.views.payment,name='payment'),
-    path('point',dream.views.point,name='point'),
-    path('notifyhome',dream.views.notifyhome,name="notifyhome"),
-    path('notify',dream.views.notify,name="notify"),
-    path('notifycom',dream.views.notifycom,name="notifycom"),
-    path('ask',dream.views.ask,name="ask"),
+    path('point/',dream.views.point,name='point'),
+    path('notifyhome/',dream.views.notifyhome,name="notifyhome"),
+    path('notify/',dream.views.notify,name="notify"),
+    path('notifycom/',dream.views.notifycom,name="notifycom"),
+    path('ask/',dream.views.ask,name="ask"),
 
 ]
 

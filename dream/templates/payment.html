@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
-    {% load static %}
-    {% block content %}
-    <link rel="stylesheet" href="{% static 'css/payment.css'%}">
-
-        <div class="top">
-            <div class="money">
-                <img src="https://image.flaticon.com/icons/png/512/2627/2627869.png" alt="" height="50px" width="50px">
-                <span style= "font-size:30px;" >25,000원</span>
-            </div>
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/payment.css'%}">
+    <div class="top">
+        <div class="money">
+            <img src="https://image.flaticon.com/icons/png/512/2627/2627869.png" alt="" height="50px" width="50px">
+            <span style= "font-size:30px;" >25,000원</span>
         </div>
-        <div class="center">
-            <center><img src="https://cdn.discordapp.com/attachments/856480105073344593/858363528183939122/unknown.png" alt="" height="267px" width="712"><br><br>
-            <strong><p>바코드를 직원에게 보여주세요</p></strong>
-            <img src="https://image.flaticon.com/icons/png/512/31/31014.png" alt="" height="35px" width="35px">
-            <strong><span style="font-size: 20px;">유효시간:</span></strong>
-            <span style= " font-size: 23px; color: red;" >01:58</span>
-            </center>
-        </div>
+    </div>
+    <div class="center">
+        <center><img src="https://cdn.discordapp.com/attachments/856480105073344593/858363528183939122/unknown.png" alt="" height="267px" width="712"><br><br>
+        <strong><p>바코드를 직원에게 보여주세요</p></strong>
+        <img src="https://image.flaticon.com/icons/png/512/31/31014.png" alt="" height="35px" width="35px">
+        <strong><span style="font-size: 20px;">유효시간:</span></strong>
+        <span style= " font-size: 23px; color: red;" >01:58</span>
+        </center>
+    </div>
 {% endblock %}

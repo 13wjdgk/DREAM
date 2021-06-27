@@ -1,0 +1,178 @@
+html, body {
+    margin: 0;
+    padding:0;
+    height: 100%;
+}
+
+.main_photo {
+    height: 55%;
+    width: 100%;
+    background-color: rgb(197, 196, 187);
+    z-index: 0;
+}
+
+.confirmation {
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    width: 30%;
+    height: 19%;
+    background-color: rgb(248,233,130);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.balance_label {
+    font-size: 20px;
+    margin-top: 3%;
+    margin-left: 4%;
+    margin-bottom: 0;
+}
+
+.balance {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 2.3%;
+    margin-left: 4%;
+    margin-bottom: 0;
+}
+
+.pay {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 30%;
+    margin-bottom: 0;
+}
+
+.pay a { text-decoration: none;}
+
+.breakdown {
+    font-weight: bold;
+    margin-left: 83%;
+}
+
+p a:visited { color: black;}
+
+p a:link {color: black;}
+
+.search_bar {
+    margin-top: 2%;
+    text-align: center;
+    height: 8%;
+}
+
+.search_bar2 {
+    height: 100%;
+}
+
+input {
+    padding: 0 1%;
+    border: 1px solid black;
+    border-radius: 18px;
+    width: 40%;
+    height: 55%;
+    /* background-image: url(https://img.icons8.com/ios/50/000000/search--v1.png);
+    background-repeat: no-repeat;
+    background-position: right; */
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: rgb(155, 155, 155);
+    font-size: 15px;
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    height: 1px;
+    background: rgb(0, 0, 0);
+}
+
+.button_in {
+    display: flex;
+    width: 85%;
+    height: 30%;
+    justify-content: space-around;
+    margin-left: 7.8%;
+}
+
+.b1_c {
+    height: 100%;
+    width: 22%;
+    background-color: rgb(248,233,130);
+    border: 1px solid rgb(248,233,130);
+    border-radius: 30px;
+}
+
+.button1_top_wrap, .button1_bottom_wrap {
+    height: 50%;
+}
+
+.button1_top, .button1_bottom {
+    background-color: rgb(248,233,130);
+    border: 1px solid rgb(248,233,130);
+    border-radius: 20%;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10%;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(43,40,40);
+}
+
+.button1_top {
+    background-image: url('https://images-ext-2.discordapp.net/external/HwTDW1-2jzWTbEVcOt1-uTJAzntcLfeNQt5N6uyzHmo/https/image.flaticon.com/icons/png/512/1453/1453022.png?width=375&height=375');
+    background-size: 20% 80%;
+    background-repeat: no-repeat;
+    background-position: 10% 30%;
+}
+
+.button1_bottom {
+    background-image: url('https://images-ext-2.discordapp.net/external/rTdd2iwwIIu-CGl-uOCeYscKeAL_wGAUG1BnKM7-J6s/https/image.flaticon.com/icons/png/512/1873/1873301.png?width=375&height=375');
+    background-size: 15% 70%;
+    background-repeat: no-repeat;
+    background-position: 13% 30%;
+}
+
+.b2_c, .b3_c{
+    height: 100%;
+    width: 22%;
+    background-color: rgb(248,233,130);
+    border: 1px solid rgb(248,233,130);
+    border-radius: 30px;
+}
+
+.button2, .button3 {
+    margin-top:2%;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(43,40,40);
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    padding-top: 50%;
+    padding-bottom: 10%;
+    background-color: rgb(248,233,130);
+    border: 1px solid rgb(248, 233, 130);
+    border-radius: 100%;
+}
+
+.button2 {
+    background-image: url('https://w.namu.la/s/27d322e92da32266978e996d5e736d22fec933ff35acc7030c3f3218e90cb623578f4c3104b7e78b7fa29da110bd1be89401d7ec8c657f01b4a475d5426cec962909fb446fbf1995baad37129ce80a626d248e2d84716e5370f2f80c8114353b');
+    background-size: 40% 45%;
+    background-repeat: no-repeat;
+    background-position: 48% 35%;
+}
+
+.button3 {
+    background-image: url('https://media.discordapp.net/attachments/856480105073344593/857596691318571028/178955.png');
+    background-repeat: no-repeat;
+    background-size: 40% 45%;
+    background-position: 48% 35%;
+}

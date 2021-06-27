@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/notify.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div>
+        <h1><strong>신고</strong></h1>
+        <hr>
+    </div>
+    <div>
+        <h2><strong>1. 신청서 작성</strong></h2>
+        <br>
+        <div class="form">
+            <h3>신고유형</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <select name="notify" id="" class="notify">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <br><br><br>
+            <h3>제목</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <input type="text">
+            <br><br><br>
+            <h3>내용</h3><br><br>
+            <textarea name="" id="" cols="100" rows="10"></textarea>
+            <br><br><br>
+            <div class="button">
+                <button type="button" class="btn">제출</button>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+{% endblock %}

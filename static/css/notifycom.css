@@ -1,0 +1,14 @@
+/* 가운데선 */
+hr{
+    background-color: black;
+    height: 2px;
+}
+
+h1{
+    font-size: 45px;
+}
+
+.message{
+    text-align: center;
+    padding: 20% 0;
+}

@@ -15,3 +15,18 @@ def Info(request):
 def payment(request):
     return render(request,'payment.html')
 
+def point(request):
+    return render(request,'point.html')
+
+def notifyhome(request):
+    return render(request,'notifyhome.html')
+
+def notify(request):
+    return render(request,'notify.html')
+
+def notifycom(request):
+    return render(request,"notifycom.html")
+
+def ask(request):
+    return render(request,"ask.html")
+

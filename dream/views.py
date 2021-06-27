@@ -18,3 +18,6 @@ def notifycom(request):
 
 def ask(request):
     return render(request,"ask.html")
+
+def login(request):
+    return render(request,"login.html")

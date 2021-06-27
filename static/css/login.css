@@ -20,6 +20,7 @@ h1 a:visited { color: black;}
 .form {
     text-align: center;
     height: 50%;
+    position: relative;
 }
 
 form {
@@ -55,7 +56,7 @@ div input {
     height: 100%;
     font-weight: bold;
     font-size: 16px;
-    background-color: rgb(248,233,130);
+    background-color: rgb(248, 130, 130);
     border: 1px solid rgb(248,233,130);
     border-radius: 20px;
 }
@@ -76,14 +77,6 @@ div input {
     background-position: 10%;
 }
 
-#radio {
-    /* margin-left: -24% !important;
-    margin-right: -0.7% !important; */
-    text-align: left !important;
-    width: 5%!important;
-    height: 5% !important;
-}
-
 p {
     font-weight: bold;
 }
@@ -95,3 +88,17 @@ p a {
 p a:visited { color: black;}
 
 p a:link {color: black;}
+
+input {
+    margin-left: 0px;
+    width: 50%;
+}
+
+#radio {
+    width: 5% !important;
+    height: 5% !important;
+}
+
+.a {
+    float: left;
+}

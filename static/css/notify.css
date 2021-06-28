@@ -24,5 +24,8 @@ h3{
 }
 
 .button{
+    background-color: #F8E982;
+    width: 20%;
     text-align: center;
+    margin:0 auto;
 }

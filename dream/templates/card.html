@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/card.css'%}">
+<div class="card_back">
+    <p class="card_back_word">카드등록</p>
+</div>
+
+<div class="card_info_c">
+    <form action="">
+        <div class="one">
+            <div class="font_c">
+                <p class="font">카드번호</p>
+            </div>
+            <div class="input_c">
+                <input type="text" class="input_card_num"> - <input type="text" class="input_card_num"> - <input type="text" class="input_card_num"> - <input type="text" class="input_card_num">
+            </div>
+        </div>
+        <div class="one">
+            <div class="font_c">
+                <p class="font">유효기간</p>
+            </div>
+            <div class="input_c">
+                <input type="text" class="input_card_m"> 월<input type="text" class="input_card_y"> 년
+            </div>
+        </div>
+        <div class="one">
+            <div class="font_c">
+                <p class="font">비밀번호</p>
+            </div>
+            <div class="input_c">
+                <input type="text" class="input_card_pwd">
+            </div>
+        </div>
+        <br><br>
+        <center><button>카드등록</button></center>
+            
+ 
+    </form>
+</div>
+
+
+{% endblock %}

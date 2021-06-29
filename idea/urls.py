@@ -29,6 +29,6 @@ urlpatterns = [
     path('notify/',dream.views.notify,name="notify"),
     path('notifycom/',dream.views.notifycom,name="notifycom"),
     path('ask/',dream.views.ask,name="ask"),
-
+    path('card/', dream.views.card, name="card"),
 ]
 

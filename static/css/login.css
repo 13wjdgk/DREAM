@@ -7,7 +7,7 @@ html, body {
 h1 {
     font-weight: bold;
     font-size: 40px;
-    margin-top: 11%;
+    margin-top: 8%;
     text-align: center;
 }
 
@@ -76,13 +76,6 @@ div input {
     background-position: 10%;
 }
 
-#radio {
-    /* margin-left: -24% !important;
-    margin-right: -0.7% !important; */
-    text-align: left !important;
-    width: 5%!important;
-    height: 5% !important;
-}
 
 p {
     font-weight: bold;

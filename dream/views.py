@@ -28,3 +28,5 @@ def notifycom(request):
 def ask(request):
     return render(request,"ask.html")
 
+def card(request):
+    return render(request,"card.html")

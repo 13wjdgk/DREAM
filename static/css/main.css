@@ -5,9 +5,9 @@ html, body {
 }
 
 .main_photo {
-    height: 55%;
+    height: 45%;
     width: 100%;
-    background-color: rgb(197, 196, 187);
+    background-color: rgb(209, 204, 204);
     z-index: 0;
 }
 

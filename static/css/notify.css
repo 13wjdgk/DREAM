@@ -25,6 +25,7 @@ h3{
 
 .button{
     background-color: #F8E982;
+    border-radius: 10px;
     width: 20%;
     text-align: center;
     margin:0 auto;

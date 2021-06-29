@@ -1,0 +1,34 @@
+.b-div{
+    padding: 0 10%;
+
+}
+.s-div{
+    padding-bottom: 30%;
+}
+
+h2{
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+h5{
+    padding: 3% 6% ;
+
+}
+
+.login_info{
+    padding: 0.05% 6% ;
+}
+.id_form{
+    width: 300px;
+}
+button{
+    border-radius: 8px;
+    width: 80px;
+    border-color: #C4C4C4;
+    background-color: #F8E982;
+    color: black;
+}
+.row{
+    padding-bottom: 1%;
+}

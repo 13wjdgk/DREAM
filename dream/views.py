@@ -13,6 +13,9 @@ def Info(request):
 def payment(request):
     return render(request,'payment.html')
 
+def receipt(request):
+    return render(request,'receipt.html')
+
 def point(request):
     return render(request,'point.html')
 
@@ -28,5 +31,10 @@ def notifycom(request):
 def ask(request):
     return render(request,"ask.html")
 
+def mypage(request):
+    return render(request,"mypage.html")
+
+def mem_info(request):
+    return render(request,"mem_info.html")
 def card(request):
     return render(request,"card.html")

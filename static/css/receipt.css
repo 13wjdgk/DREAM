@@ -1,0 +1,100 @@
+hr.one{
+    height: 2px;
+    background-color: black;
+}
+
+.container{
+	padding-top: 45px;
+    display: grid;
+    grid-template-rows: 15% 25% 60%;
+    grid-template-columns: 100%;
+}
+
+.header{
+	padding-bottom: 150px;
+}
+
+
+
+.tg  {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.tg td{
+	border-color:black;
+	border-style:solid;
+	border-width:1px;
+	font-size:20px;
+	overflow:hidden;
+	padding:8px 20px;
+	word-break:normal;
+}
+.tg th{
+	border-color:black;
+	border-style:solid;
+	border-width:1px;
+	font-size:20px;
+	font-weight:normal;
+	overflow:hidden;
+	padding:10px 5px;
+	word-break:normal;
+}
+.tg .tg-1i2r{
+	background-color:#f8f2c0;
+	border-color:inherit;
+	text-align:center;
+	vertical-align:top
+}
+.tg .tg-c3ow{
+	border-color:inherit;
+	text-align:left;
+	vertical-align:top
+}
+.tg .tg-0pky{
+	border-color:inherit;
+	text-align:left;
+	vertical-align:middle;
+}
+
+
+
+a {
+	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	display: block;
+	margin: 5px auto;
+	max-width: 180px;
+	text-decoration: none;
+	border-radius: 8px;
+	padding: 10px 20px;
+}
+
+a.button1 {
+	color: black;
+	box-shadow: #F8E982 0 0px 0px 2px inset;
+    background-color: #F8E982;
+}
+
+a.button1:hover {
+	color: black;
+	box-shadow: #fae34e 0 0px 0px 40px inset;
+}
+
+.tg .tg-wp8o{border-color:#000000;text-align:center;vertical-align:top}
+.tg .tg-iks7{background-color:#ffffff;border-color:#000000;text-align:left;vertical-align:middle}
+.tg .tg-73oq{border-color:#000000;text-align:center;vertical-align:middle}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:middle}
+.tg .tg-0lax{text-align:right;vertical-align:middle; color: blue;}
+.tg .result{
+	text-align: center;
+	color: blue;
+	vertical-align: middle;
+}
+
+.con{
+	background-color: #A3E1EF;
+	border-radius: 6px;
+}

@@ -42,6 +42,7 @@ li{
 }
 /* 버튼 */
 .btn{
+    background-color: #F8E982;
     width: 10%;
     float: right;
 }

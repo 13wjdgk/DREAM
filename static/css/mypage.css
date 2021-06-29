@@ -1,0 +1,40 @@
+.top{
+    background-color: #C4C4C4;
+    height: 250px;
+    width: 100%;
+    display: flex;
+}
+.mypage{
+    width: 100%;
+    height: 30%;
+}
+h3{
+    padding-top: 13%;
+    padding-left: 10%;
+}
+.mypage_box{
+    height: 300px;
+    width: 100%;
+    border-radius: 20px;
+
+    background-color: #F8E982;
+}
+.mem_info{
+    
+    width: 30%;
+    border-right: 1px solid gray
+    
+}
+.mem_info_h1{
+    text-align: center;
+}
+.donation{
+    width: 70%;
+}
+.donation{
+    padding-top: 3%;
+}
+.b_box{
+    margin-left: 2%;
+    margin-right: 2%;
+}

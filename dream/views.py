@@ -31,3 +31,10 @@ def notifycom(request):
 def ask(request):
     return render(request,"ask.html")
 
+def mypage(request):
+    return render(request,"mypage.html")
+
+def mem_info(request):
+    return render(request,"mem_info.html")
+def card(request):
+    return render(request,"card.html")

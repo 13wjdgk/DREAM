@@ -30,5 +30,8 @@ urlpatterns = [
     path('notifycom/',dream.views.notifycom,name="notifycom"),
     path('ask/',dream.views.ask,name="ask"),
     path('receipt/',dream.views.receipt,name="recipt"),
+    path('mypage/',dream.views.mypage,name="mypage"),
+    path('mem_info/',dream.views.mem_info,name="mem_info"),
+    path('card/', dream.views.card, name="card"),
 ]
 

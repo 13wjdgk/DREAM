@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/receipt.css'%}">
+    <div class="container">
+        <div class="header">
+            <h1><strong>카드 사용내역</strong></h1>
+            <hr class="one">
+        </div>
+        <div>
+            <center>
+                <table class="tg">
+                    <thead>
+                        <tr>
+                            <th class="tg-1i2r">갱신이력</th>
+                            <th class="tg-c3ow">&nbsp&nbsp&nbsp&nbsp 2021년 4월 15일 16시 20분에 카드사용내역이 <span style="color: blue;">1건</span> 추가 되었습니다.</th>
+                            <th class="tg-0pky" rowspan="3"><a href="#" class="button1" style="font-size: 25px;"><strong>검색</strong></a></th>
+                        </tr>
+                        <tr>
+                            <td class="tg-1i2r">검색기간</td>
+                            <td class="tg-0pky">
+                                <form>
+                                    <input type='date'/>
+                                    <span>~</span>
+                                    <input type='date'/>
+                                    &nbsp&nbsp&nbsp
+                                    <span></span>
+                                    <form action='login_page.php'>
+                                        <input type='button' value='1주'/>
+                                        <input type='button' value='1개월'/>
+                                        <input type='button' value='3개월'/>
+                                        <input type='button' value='1년'/>
+                                    </form>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tg-1i2r">검색단어</td>
+                            <td class="tg-0pky">
+                                <input type="text" name="search" size="50" placeholder="검색어를 입력해주세요.">
+                                <span style="font-size: 20px;">가맹점/메모에 삽입된 단어 또는 승인번호를 입력</span>
+
+                            </td>
+                            
+                            
+                        </tr>
+                    </thead>
+                </table>
+            </center>
+        </div>
+            <table class="tg">
+                <tbody>
+                <tr>
+                    <td class="tg-73oq">
+                        <div class="checkbox">
+                            <input type='checkbox'
+                                    name='name' 
+                                    value='selectall'
+                                    onclick='selectAll(this)'/>
+                        </div>
+                        <script>
+                            function selectAll(selectAll)  {
+                                const checkboxes 
+                                    = document.getElementsByName('name');
+    
+                                checkboxes.forEach((checkbox) => {
+                                checkbox.checked = selectAll.checked;
+                                })
+                            }
+                        </script>
+                    </td>
+                    <td class="tg-73oq">NO.</td>
+                    <td class="tg-73oq">사용일시</td>
+                    <td class="tg-73oq">승인금액</td>
+                    <td class="tg-73oq">가맹점</td>
+                    <td class="tg-73oq">승인번호</td>
+                    <td class="tg-73oq">거래구분</td>
+                    <td class="tg-73oq">메모</td>
+                    <td class="tg-73oq">상세</td>
+                </tr>
+                <tr>
+                    <td class="tg-73oq">
+                        <div class="checkbox">
+                            <input type='checkbox'
+                                    name='name' 
+                                    />
+                        </div>
+                    </td>
+                    <td class="tg-73oq">321</td>
+                    <td class="tg-73oq">2021-02-03<br>12:30:20</td>
+                    <td class="tg-0lax">2,500</td>
+                    <td class="tg-73oq">CU 진주초전점</td>
+                    <td class="tg-73oq">300286300298</td>
+                    <td class="result">정상</td>
+                    <td class="tg-73oq">
+                        <input type="text" name="search" size="5" placeholder="memo">
+                        <span><input type='button' value='저장'/></span>
+                    </td>
+                    <td class="tg-73oq">
+                        <input class="con" type='button' value='확인'/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-73oq">
+                        <div class="checkbox">
+                            <div class="checkbox">
+                                <input type='checkbox'
+                                        name='name' 
+                                        />
+                        </div>
+                    </td>
+                    <td class="tg-73oq">322</td>
+                    <td class="tg-73oq">2021-02-05<br>16:50:32</td>
+                    <td class="tg-0lax">3,000</td>
+                    <td class="tg-73oq">세븐일레븐 진주하대스타점</td>
+                    <td class="tg-73oq">300298300298</td>
+                    <td class="result">정상</td>
+                    <td class="tg-73oq">
+                        <input type="text" name="search" size="5" placeholder="memo">
+                        <span><input type='button' value='저장'/></span>
+                    </td>
+                    <td class="tg-73oq">
+                        <input class="con" type='button' value='확인'/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-73oq">
+                        <div class="checkbox">
+                            <div class="checkbox">
+                                <input type='checkbox'
+                                        name='name' 
+                                        />
+                        </div>
+                    </td>
+                    <td class="tg-73oq">323</td>
+                    <td class="tg-73oq">2021-02-09<br>13:00:02</td>
+                    <td class="tg-0lax">12,000</td>
+                    <td class="tg-73oq">남부마트(주)</td>
+                    <td class="tg-73oq">300615300615</td>
+                    <td class="result">정상</td>
+                    <td class="tg-73oq">
+                        <input type="text" name="search" size="5" placeholder="memo">
+                        <span><input type='button' value='저장'/></span>
+                    </td>
+                    <td class="tg-73oq">
+                        <input class="con" type='button' value='확인'/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-73oq">
+                        <div class="checkbox">
+                            <div class="checkbox">
+                                <input type='checkbox'
+                                        name='name' 
+                                        />
+                        </div>
+                    </td>
+                    <td class="tg-73oq">324</td>
+                    <td class="tg-73oq">2021-02-26<br>17:00:09</td>
+                    <td class="tg-0lax">8,000</td>
+                    <td class="tg-73oq">진가 국밥</td>
+                    <td class="tg-73oq">300684300684</td>
+                    <td class="result">정상</td>
+                    <td class="tg-73oq">
+                        <input type="text" name="search" size="5" placeholder="memo">
+                        <span><input type='button' value='저장'/></span>
+                    </td>
+                    <td class="tg-73oq">
+                        <input class="con" type='button' value='확인'/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-73oq">
+                        <div class="checkbox">
+                            <div class="checkbox">
+                                <input type='checkbox'
+                                        name='name' 
+                                        />
+                        </div>
+                    </td>
+                    <td class="tg-73oq">325</td>
+                    <td class="tg-73oq">2021-03-15<br>14:15:58</td>
+                    <td class="tg-0lax">5,500</td>
+                    <td class="tg-73oq">한솥도시락 진주경상대점</td>
+                    <td class="tg-73oq">300784300784</td>
+                    <td class="result">정상</td>
+                    <td class="tg-73oq">
+                        <input type="text" name="search" size="5" placeholder="memo">
+                        <span><input type='button' value='저장'/></span>
+                    </td>
+                    <td class="tg-73oq">
+                        <input class="con" type='button' value='확인'/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-73oq">
+                        <div class="checkbox">
+                            <div class="checkbox">
+                                <input type='checkbox'
+                                        name='name' 
+                                        />
+                        </div>
+                    </td>
+                    <td class="tg-73oq">326</td>
+                    <td class="tg-73oq">2021-03-21<br>11:15:25</td>
+                    <td class="tg-0lax">1,500</td>
+                    <td class="tg-73oq">GS25 경상대점</td>
+                    <td class="tg-73oq">300852300852</td>
+                    <td class="result">정상</td>
+                    <td class="tg-73oq">
+                        <input type="text" name="search" size="5" placeholder="memo">
+                        <span><input type='button' value='저장'/></span>
+                    </td>
+                    <td class="tg-73oq">
+                        <input class="con" type='button' value='확인'/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <center style="font-size: 20px;">
+                <u>1</u> <u>2</u> <u><span style="color: blue;">3</span></u> <u>4</u> <u>5</u>
+            </center>
+        </div>
+    </div>     
+{% endblock %}

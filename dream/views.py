@@ -13,6 +13,9 @@ def Info(request):
 def payment(request):
     return render(request,'payment.html')
 
+def receipt(request):
+    return render(request,'receipt.html')
+
 def point(request):
     return render(request,'point.html')
 

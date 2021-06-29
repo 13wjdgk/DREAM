@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/mypage.css'%}">
+<div class="top">
+    <div class="mypage">
+        <h3>마이페이지</h3>
+    </div>
+    
+</div>
+<div style="padding: 3% 15%;">
+    <div class="mypage_box">
+        <div class="row b_box" >
+            <div class="mem_info" style="padding-top: 2%;">
+                <br><br><br><br><br><br><br><br>
+                <h1 class="mem_info_h1">회원정보</h1>
+            </div>
+            <div class="donation" style="padding: left 10%;">
+                <h1 class="donation_h1" style="padding: left 10%;">  &nbsp;총 기부 포인트</h1>
+                <h1 class="" style="text-align: center; padding-top: 5%;">1,025,000원</h1>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
+

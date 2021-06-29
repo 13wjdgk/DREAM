@@ -38,9 +38,9 @@
 
         <div class="certify">
             <h3>본인 인증</h3><br><br>
-            <div class="button">
-                <button type="button" class="btn">휴대폰으로 본인 인증</button>
-            </div>
+            <form action="{% url 'notify' %}" class="button">
+                <input type="submit" class="btn" value="휴대폰으로 본인 인증">
+            </form>
             
         </div>
 

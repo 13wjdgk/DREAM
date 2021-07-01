@@ -5,25 +5,50 @@ html, body {
 }
 
 .main_photo {
-    height: 45%;
+    height: 49%;
     width: 100%;
-    background-color: rgb(209, 204, 204);
     z-index: 0;
+    /* position: fixed; */
+    background-image: url('image/메인사진임시임시.jpg');
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    filter: brightness(50%); 
 }
 
 .confirmation {
     position: absolute;
-    top: 15%;
-    left: 8%;
-    width: 30%;
+    top: 19%;
+    left: 15%;
+    width: 24%;
     height: 19%;
-    background-color: rgb(248,233,130);
-    z-index: 1;
+    background-color: transparent;
+    z-index: 2;
     border-radius: 20px;
+    /* position: fixed; */
+}
+
+.main_intro {
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    width: 35%;
+    height: 30%;
+    /* position: fixed; */
+}
+
+.balance_hr {
+    margin: 4% 7% 5% 3%;
 }
 
 .balance_label {
-    font-size: 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
     margin-top: 3%;
     margin-left: 4%;
     margin-bottom: 0;
@@ -31,48 +56,80 @@ html, body {
 
 .balance {
     display: inline-block;
-    font-weight: bold;
-    font-size: 30px;
+    font-weight: 1000;
+    font-size: 50px;
+    color: white;
     margin-top: 2.3%;
-    margin-left: 4%;
+    margin-left: 2%;
     margin-bottom: 0;
+}
+
+.breakdown {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+    margin-left: 11%;
 }
 
 .pay {
     display: inline-block;
     font-weight: bold;
-    font-size: 20px;
-    margin-left: 30%;
+    font-size: 17px;
+    color: white;
+    margin-left: 20%;
     margin-bottom: 0;
 }
 
-.pay a { text-decoration: none;}
+.pay a, .breakdown a { text-decoration: none;}
 
-.breakdown {
-    font-weight: bold;
-    margin-left: 83%;
+p a:visited { color: white;}
+
+p a:link {color: white;}
+
+.DREAM {
+    color: white;
+    font-weight: 1000;
+    font-size: 60px;
 }
 
-p a:visited { color: black;}
+.emphasis {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
 
-p a:link {color: black;}
+.writing {
+    color: white;
+    margin-bottom: 1%;
+}
+
+center p {
+    font-size: 26px;
+    font-weight:540;
+    margin: 0;
+}
 
 .search_bar {
-    margin-top: 2%;
+    margin-top: 1.2%;
     text-align: center;
-    height: 8%;
+    height: 10%;
 }
 
 .search_bar2 {
-    height: 100%;
+    height: 70%;
+    width: 100%;
 }
 
 input {
     padding: 0 1%;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 18px;
     width: 40%;
-    height: 55%;
+    height: 80%;
+    box-shadow: 0.2px 2px 7px 2px rgb(199, 199, 199);
     /* background-image: url(https://img.icons8.com/ios/50/000000/search--v1.png);
     background-repeat: no-repeat;
     background-position: right; */
@@ -87,92 +144,102 @@ input:focus {
     font-size: 15px;
 }
 
-hr.hr_ {
-    margin: 0;
-    border: 0;
-    height: 1px;
-    background: rgb(0, 0, 0);
+.icon {
+    width: 80%;
+    height: 80%;
+    margin-top: 25%;
+}
+
+.hr {
+    margin-left: 8%;
+    margin-top: 6.5%;
+    margin-bottom: 6.5%;
 }
 
 .button_in {
     display: flex;
-    width: 85%;
+    width: 54%;
     height: 30%;
     justify-content: space-around;
-    margin-left: 7.8%;
+    margin-left: 23%;
+    margin-top: 2%;
 }
 
-.b1_c {
+.b1_c,.b2_c, .b3_c{
     height: 100%;
-    width: 22%;
-    background-color: rgb(248,233,130);
-    border: 1px solid rgb(248,233,130);
+    width: 31%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid transparent;
     border-radius: 30px;
+    box-shadow: 0.2px 2px 7px 2px rgb(199, 199, 199);
 }
 
-.button1_top_wrap, .button1_bottom_wrap {
-    height: 50%;
-}
-
-.button1_top, .button1_bottom {
-    background-color: rgb(248,233,130);
-    border: 1px solid rgb(248,233,130);
-    border-radius: 20%;
-    display: inline-block;
-    width: 100%;
-    margin-top: 10%;
-    font-weight: bold;
+.button1, .button2, .button3 {
+    background-color: white;
+    border: 1px solid transparent;
     font-size: 20px;
     color: rgb(43,40,40);
+    text-align: left;
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+    padding-top: 15%;
+    padding-left: 8%;
+    padding-right: 10%;
 }
 
-.button1_top {
+button p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.go {
+    font-size: 14px;
+    text-align: right;
+}
+
+
+.button1 {
     background-image: url('https://images-ext-2.discordapp.net/external/HwTDW1-2jzWTbEVcOt1-uTJAzntcLfeNQt5N6uyzHmo/https/image.flaticon.com/icons/png/512/1453/1453022.png?width=375&height=375');
-    background-size: 20% 80%;
+    background-size: 15% 17%;
     background-repeat: no-repeat;
-    background-position: 10% 30%;
-}
-
-.button1_bottom {
-    background-image: url('https://images-ext-2.discordapp.net/external/rTdd2iwwIIu-CGl-uOCeYscKeAL_wGAUG1BnKM7-J6s/https/image.flaticon.com/icons/png/512/1873/1873301.png?width=375&height=375');
-    background-size: 15% 70%;
-    background-repeat: no-repeat;
-    background-position: 13% 30%;
-}
-
-.b2_c, .b3_c{
-    height: 100%;
-    width: 22%;
-    background-color: rgb(248,233,130);
-    border: 1px solid rgb(248,233,130);
-    border-radius: 30px;
-}
-
-.button2, .button3 {
-    margin-top:2%;
-    font-weight: bold;
-    font-size: 20px;
-    color: rgb(43,40,40);
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    padding-top: 50%;
-    padding-bottom: 10%;
-    background-color: rgb(248,233,130);
-    border: 1px solid rgb(248, 233, 130);
-    border-radius: 100%;
+    background-position: 85% 35%;
 }
 
 .button2 {
     background-image: url('https://w.namu.la/s/27d322e92da32266978e996d5e736d22fec933ff35acc7030c3f3218e90cb623578f4c3104b7e78b7fa29da110bd1be89401d7ec8c657f01b4a475d5426cec962909fb446fbf1995baad37129ce80a626d248e2d84716e5370f2f80c8114353b');
-    background-size: 40% 45%;
+    background-size: 15% 17%;
     background-repeat: no-repeat;
-    background-position: 48% 35%;
+    background-position: 85% 35%;
 }
 
 .button3 {
     background-image: url('https://media.discordapp.net/attachments/856480105073344593/857596691318571028/178955.png');
     background-repeat: no-repeat;
-    background-size: 40% 45%;
-    background-position: 48% 35%;
+    background-size: 15% 17%;
+    background-position: 85% 35%;
+}
+
+button:hover {
+    background-color: #F8E982;
+    border: 1px solid #F8E982;
+    font-weight: bold;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.b1_c:hover {
+    border: 1px solid #F8E982;
+}
+
+#search_btn {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 30.3%;
+}
+
+#search_btn:hover {
+    background-color: none;
+    border: none;
 }

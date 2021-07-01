@@ -1,4 +1,5 @@
 
+from django.http import request
 from django.shortcuts import render
 
 # Create your views here.
@@ -36,5 +37,13 @@ def mypage(request):
 
 def mem_info(request):
     return render(request,"mem_info.html")
+
 def card(request):
     return render(request,"card.html")
+
+def dream_map(request):
+    return render(request,"dream_map.html")
+
+def member(request):
+    return render(request,"member.html")
+

@@ -32,3 +32,11 @@ button{
 .row{
     padding-bottom: 1%;
 }
+
+a:link { color: black; text-decoration: none;}  
+
+a:visited { color: black; text-decoration: none;} 
+
+a:hover { color:#cc0000; text-decoration: none;}
+
+a:active { color:#ff0000; text-decoration: none;}

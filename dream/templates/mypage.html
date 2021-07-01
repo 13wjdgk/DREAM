@@ -2,6 +2,12 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/mypage.css'%}">
+<style type="text/css">
+    a:link { color: black; text-decoration: none;}
+    a:visited { color: black; text-decoration: none;}
+    a:hover { color: gray; text-decoration: none;}
+   </style>
+
 <div class="top">
     <div class="mypage">
         <h3>마이페이지</h3>
@@ -12,10 +18,11 @@
     <div class="mypage_box">
         <div class="row b_box" >
             <div class="mem_info" style="padding-top: 2%;">
-                <img style="width: 50%; height: 60%; padding-left: 20%;" src="{% static 'image/profile.png' %}" alt="">
+                <img style="width: 80%; height: 70%; padding-left: 20%;" src="{% static 'image/profile.png' %}" alt="">
                 <br><br>
 
-                <h1  class="mem_info_h1">회원정보</h1>
+                <a href="{% url 'mem_info' %}"><h1  class="mem_info_h1">회원정보</h1></a>
+                <br>
             </div>
             <div class="donation" style="padding: left 10%;">
                 <h1 class="donation_h1" style="padding: left 10%;">  &nbsp;총 기부 포인트</h1>

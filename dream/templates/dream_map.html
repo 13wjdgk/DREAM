@@ -1,0 +1,381 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/dream_map.css'%}">
+<!-- <div id="map" style="width:100%; height:80%;"></div>
+
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b85a5bc253265780252ee0af7f69157a"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(35.19880217210258, 128.07597876756756), // 지도의 중심좌표
+		        level: 1, // 지도의 확대 레벨
+		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
+
+		// 지도를 생성한다 
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+		// 지도에 마커를 생성하고 표시한다
+		var marker = new kakao.maps.Marker({
+		    position: new kakao.maps.LatLng(35.19880217210258, 128.07597876756756), // 마커의 좌표
+		    map: map // 마커를 표시할 지도 객체
+		});
+
+	</script> -->
+
+    <div id="map" style="width:100%;height:100vh;"></div>
+
+	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b85a5bc253265780252ee0af7f69157a&libraries=clusterer"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(37.56682, 126.97865), // 지도의 중심좌표
+		        level: 3, // 지도의 확대 레벨
+		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
+
+		// 지도를 생성한다 
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+		
+		// 마커 클러스터러를 생성합니다 
+	    var clusterer = new kakao.maps.MarkerClusterer({
+	        map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+	        averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+	        minLevel: 10 // 클러스터 할 최소 지도 레벨 
+	    });
+		
+	 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+	    if (navigator.geolocation) {
+	        
+	        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+	        navigator.geolocation.getCurrentPosition(function(position) {
+	            
+	            var lat = position.coords.latitude, // 위도
+	                lon = position.coords.longitude; // 경도
+	            
+	            var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+	                message = '<div style="padding:5px;">현재위치</div>'; // 인포윈도우에 표시될 내용입니다
+	            
+	            // 마커와 인포윈도우를 표시합니다
+	            displayMarker(locPosition, message);
+	                
+	          });
+	        
+	     // 지도에 마커와 인포윈도우를 표시하는 함수입니다
+	        function displayMarker(locPosition, message) {
+
+	            // 마커를 생성합니다
+	            var marker_present = new kakao.maps.Marker({  
+	                map: map, 
+	                position: locPosition
+	            }); 
+	            
+	            var iwContent = message, // 인포윈도우에 표시할 내용
+	                iwRemoveable = true;
+
+	            // 인포윈도우를 생성합니다
+	            var infowindow = new kakao.maps.InfoWindow({
+	                content : iwContent,
+	                removable : iwRemoveable
+	            });
+	            
+	            // 인포윈도우를 마커위에 표시합니다 
+	            infowindow.open(map, marker_present);
+	            
+	            // 지도 중심좌표를 접속위치로 변경합니다
+	            map.setCenter(locPosition);      
+	        }    
+	        
+        }
+
+        var markers = [];
+		var 데이터 = [
+        [35.15692174022631, 128.10804231101758,'<div style="padding:5px">25시학천국수</div>'],
+[35.15600240603645, 128.10773178267726,'<div style="padding:5px">GS25가좌중앙점</div>'],
+[35.15258952858998, 128.10595046718052,'<div style="padding:5px">GS25경상대정문점</div>'],
+[35.15676683031992, 128.1018390546308,'<div style="padding:5px">GS25경상대학사점</div>'],
+[35.17761525866964, 128.0934559334509,'<div style="padding:5px">GS25경상의대점</div>'],
+[35.17892980761595, 128.09495783473628,'<div style="padding:5px">GS25과기대학사점</div>'],
+[35.19729768803995, 128.08052868252577,'<div style="padding:5px">GS25국제대기숙사점</div>'],
+[35.2179268165712, 128.14608832182137,'<div style="padding:5px">GS25금산번영점</div>'],
+[35.158404142645104, 128.10051711785798,'<div style="padding:5px">GS25기숙사후문점</div>'],
+[35.19416682149059, 128.07116715244538,'<div style="padding:5px">GS25봉곡사랑점</div>'],
+[35.19581139142863, 128.07994740064038,'<div style="padding:5px">GS25봉곡햇살점</div>'],
+[35.19424362142424, 128.07364086850248,'<div style="padding:5px">GS25봉곡행복점</div>'],
+[35.18194437880328, 128.11483769430774,'<div style="padding:5px">GS25상대한보점</div>'],
+[35.18464714313412, 128.11308945713222,'<div style="padding:5px">GS25상대현대점</div>'],
+[35.170988059317814, 128.11306815351298,'<div style="padding:5px">GS25상평공단점</div>'],
+[35.185104092887315, 128.07376144974916,'<div style="padding:5px">GS25신안들말점</div>'],
+[35.17758805082067, 128.06731752952732,'<div style="padding:5px">GS25신안주공점</div>'],
+[35.176626137091745, 128.11742376969414,'<div style="padding:5px">GS25진주IC점</div>'],
+[35.16316243510096, 128.10710247944195,'<div style="padding:5px">GS25진주MBC점</div>'],
+[35.15963352343042, 128.10659431181463,'<div style="padding:5px">GS25진주개양점</div>'],
+[35.15775547650414, 128.1052161250116,'<div style="padding:5px">GS25진주경상대점</div>'],
+[35.19561728323033, 128.08204099363215,'<div style="padding:5px">GS25진주계동점</div>'],
+[35.18224652050663, 128.0667173493306,'<div style="padding:5px">GS25진주교대점</div>'],
+[35.21447667858934, 128.14588492433884,'<div style="padding:5px">GS25진주금산점</div>'],
+[35.177166372855524, 128.10461946892548,'<div style="padding:5px">GS25진주기계공고점</div>'],
+[35.18304461081479, 128.11703593605003,'<div style="padding:5px">GS25진주대로점</div>'],
+[35.17803428031471, 128.091953489953,'<div style="padding:5px">GS25진주동성점</div>'],
+[35.16485021869931, 128.16464660037212,'<div style="padding:5px">GS25진주문산점</div>'],
+[35.19261649308965, 128.08341802564408,'<div style="padding:5px">GS25진주뉴본성점</div>'],
+[35.1949149396509, 128.0771439119587,'<div style="padding:5px">GS25진주봉곡점</div>'],
+[35.17881990257359, 128.09498295959114,'<div style="padding:5px">GS25진주산업대점</div>'],
+[35.17879990918205, 128.1121397720218,'<div style="padding:5px">GS25진주삼현점</div>'],
+[35.17969601522223, 128.11477492906252,'<div style="padding:5px">GS25진주상대점</div>'],
+[35.19784662994764, 128.06995304433593,'<div style="padding:5px">GS25진주상봉서부점</div>'],
+[35.17829766859683, 128.10722997251284,'<div style="padding:5px">GS25진주상평점</div>'],
+[35.18461170087073, 128.10951338718024,'<div style="padding:5px">GS25진주선학산점</div>'],
+[35.18228144748813, 128.09227455656472,'<div style="padding:5px">GS25진주세무서점</div>'],
+[35.17081728253724, 128.06343576196295,'<div style="padding:5px">GS25진주신안점</div>'],
+[35.179790789058835, 128.0910586213465,'<div style="padding:5px">GS25진주아이비점</div>'],
+[35.1859913286, 128.069200393363,'<div style="padding:5px">GS25진주뉴우정점</div>'],
+[35.192484613572255, 128.06227030708584,'<div style="padding:5px">GS25진주은혜점</div>'],
+[35.19254679572213, 128.06504464117438,'<div style="padding:5px">GS25진주이현점</div>'],
+[35.19209977671555, 128.07448783895535,'<div style="padding:5px">GS25진주인사점</div>'],
+[35.19160262261739, 128.08759917563378,'<div style="padding:5px">GS25진주장대점</div>'],
+[35.19316345040854, 128.07506027659105,'<div style="padding:5px">GS25진주장원점</div>'],
+[35.17703604880796, 128.0915885803801,'<div style="padding:5px">GS25진주주약점</div>'],
+[35.19019296200609, 128.1218812114812,'<div style="padding:5px">GS25진주중앙점</div>'],
+[35.186185475512445, 128.0883708366869,'<div style="padding:5px">GS25진주천전점</div>'],
+[35.17912297348411, 128.09438887517535,'<div style="padding:5px">GS25진주칠암점</div>'],
+[35.19178580942011, 128.0889419581196,'<div style="padding:5px">GS25진주터미널점</div>'],
+[35.19806668835489, 128.08269886609114,'<div style="padding:5px">GS25진주평안점</div>'],
+[35.17335115020533, 128.05959165554472,'<div style="padding:5px">GS25진주한보점</div>'],
+[35.16314351327508, 128.11525698208132,'<div style="padding:5px">GS25진주호탄원룸점</div>'],
+[35.16451548160157, 128.11654086713085,'<div style="padding:5px">GS진주호탄길점</div>'],
+[35.16222710183688, 128.06571262290447,'<div style="padding:5px">GS25진주휴먼빌점</div>'],
+[35.20548725269951, 128.11325503747813,'<div style="padding:5px">GS25초전푸른점</div>'],
+[35.18473369644617, 128.094289569298,'<div style="padding:5px">GS25칠암남강점</div>'],
+[35.182635058005395, 128.09014173608514,'<div style="padding:5px">GS25칠암중앙점</div>'],
+[35.16917789126671, 128.05501938912528,'<div style="padding:5px">GS25평거LH점</div>'],
+[35.185482268267776, 128.12221152269558,'<div style="padding:5px">GS25하대대림점</div>'],
+[35.186807731326844, 128.1225036666067,'<div style="padding:5px">GS25하대동진점</div>'],
+[35.193291466953575, 128.12076289550848,'<div style="padding:5px">GS25하대상아점</div>'],
+[35.19315862037825, 128.12442594864817,'<div style="padding:5px">GS25하대중앙점</div>'],
+[35.183435349149484, 128.0825254948038,'<div style="padding:5px">OK마트->홀-마트(대상인지 확실x)</div>'],
+[35.17431070028735, 128.10457116869875,'<div style="padding:5px">OK마트 상평점</div>'],
+[35.19005996161425, 128.11936159939393,'<div style="padding:5px">OK수퍼마켓하대점</div>'],
+[35.16998540911988, 128.05217846028842,'<div style="padding:5px">OK할인마트</div>'],
+[35.19984877313252, 128.08452854212396,'<div style="padding:5px">TM유통->삼전마트(대상인지 확실x)</div>'],
+[35.1956611014077, 128.0704217595862,'<div style="padding:5px">YY필마트->필마트</div>'],
+[35.17479028874534, 128.09259142236684,'<div style="padding:5px">가람마트->이마트24 R진주주약원룸점</div>'],
+[35.16301871067075, 128.10830152977118,'<div style="padding:5px">가좌훼밀리마트->휴마트</div>'],
+[35.19284299665156, 128.12211027786933,'<div style="padding:5px">고봉김밥->달곰김밥(확인필요)</div>'],
+[35.16364544927669, 128.1113583241999,'<div style="padding:5px">고봉김밥호탄점->달곰김밥호탄점</div>'],
+[35.18669862315974, 128.1247855877916,'<div style="padding:5px">국수이야기</div>'],
+[35.16995870583871, 128.1112284517441,'<div style="padding:5px">굿모닝마트 상평점->나들가게굿모닝마트 상평점</div>'],
+[35.19845819475191, 128.08218083297322,'<div style="padding:5px">그남자네꽈배기의곡점</div>'],
+[35.092048203052094, 128.18739090918933,'<div style="padding:5px">금곡단위농협->진주금곡농협</div>'],
+[35.16674084622508, 128.16367025410486,'<div style="padding:5px">김가네김밥</div>'],
+[35.19567722588272, 128.11525629787207,'<div style="padding:5px">나이스마트->세진하나마트(확인필요)</div>'],
+[35.162854644861696, 128.10751730953572,'<div style="padding:5px">남부농업협동조합(남부농협)</div>'],
+[35.16203117433059, 128.0684674442038,'<div style="padding:5px">남부농협내동지점</div>'],
+[35.15956209319697, 128.1067140444959,'<div style="padding:5px">남부마트</div>'],
+[35.17012380658956, 128.0524176638142,'<div style="padding:5px">늘푸른축산</div>'],
+[35.17876753048729, 128.11242917735146,'<div style="padding:5px">달곰김밥상대점</div>'],
+[35.19412235016423, 128.1253747042062,'<div style="padding:5px">대경마트</div>'],
+[35.26404346939354, 128.16845946309982,'<div style="padding:5px">대곡농업협동조합</div>'],
+[35.26615581546621, 128.16823770290068,'<div style="padding:5px">대곡빅마트</div>'],
+[35.1685159106838, 128.0530321703775,'<div style="padding:5px">대도슈퍼</div>'],
+[35.1789220870062, 128.10423953311496,'<div style="padding:5px">대동슈퍼</div>'],
+[35.19092496668032, 128.12452461058308,'<div style="padding:5px">대박마트</div>'],
+[35.196438009233006, 128.11291200187787,'<div style="padding:5px">대영상가슈퍼</div>'],
+[35.17652042204295, 128.1152037245387,'<div style="padding:5px">대원슈퍼</div>'],
+[35.17567158496877, 128.11522045016102,'<div style="padding:5px">대일슈퍼마켓</div>'],
+[35.19827080216826, 127.93204226172728,'<div style="padding:5px">대천식당(대천식육식당)</div>'],
+[35.186790116630895, 128.11599684642601,'<div style="padding:5px">동부농협하나로마트</div>'],
+[35.21709755370871, 128.03982966970827,'<div style="padding:5px">동신슈퍼</div>'],
+[35.180328788955315, 128.08464263923022,'<div style="padding:5px">동양마트</div>'],
+[35.183283064381506, 128.11447821261308,'<div style="padding:5px">동일마트</div>'],
+[35.185955457666005, 128.12487393645625,'<div style="padding:5px">드림마트</div>'],
+[35.192950862397694, 128.11952431721062,'<div style="padding:5px">땡초김밥하대점</div>'],
+[35.16385931088394, 128.1106672777484,'<div style="padding:5px">뚜레쥬르(호탄점)</div>'],
+[35.18312274418349, 128.07241031053675,'<div style="padding:5px">롯데슈퍼 진주신안점</div>'],
+[35.21540629729688, 128.14885940497584,'<div style="padding:5px">롯데슈퍼진주금산가맹점</div>'],
+[35.16728024943634, 128.16333088905216,'<div style="padding:5px">롯데슈퍼진주문산가맹점</div>'],
+[35.201672471474865, 128.0683674253334,'<div style="padding:5px">롯데슈퍼진주상봉가맹점</div>'],
+[35.20481299849839, 128.11136164949176,'<div style="padding:5px">롯데슈퍼진주초장가맹점</div>'],
+[35.1868510779722, 128.12772450012818,'<div style="padding:5px">마트뱅크</div>'],
+[35.12238390333716, 128.09780342457358,'<div style="padding:5px">마트킹(진주본점)</div>'],
+[35.1127514791243, 128.0934505906454,'<div style="padding:5px">만우정</div>'],
+[35.163113627828416, 128.1139194147749,'<div style="padding:5px">메차쿠차호탄점</div>'],
+[35.17330395514549, 128.06133042685173,'<div style="padding:5px">메카커피진주평거점</div>'],
+[35.19601692963756, 128.08480208774608,'<div style="padding:5px">명동마트</div>'],
+[35.172351773215624, 128.05853580229794,'<div style="padding:5px">모드니마트</div>'],
+[35.19774381660027, 128.08159679697968,'<div style="padding:5px">미래마트</div>'],
+[35.16867126611186, 128.05262614273337,'<div style="padding:5px">바비큐 보스치킨</div>'],
+[35.17483720390217, 128.06120437780123,'<div style="padding:5px">바이더웨이 진주평거점(세븐일레븐)</div>'],
+[35.19103016558479, 128.05880349871373,'<div style="padding:5px">베스트마트</div>'],
+[35.168944532390576, 128.05003887805978,'<div style="padding:5px">보영슈퍼마켓</div>'],
+[35.19394472709235, 128.07857454819913,'<div style="padding:5px">보은스토아</div>'],
+[35.20110829003687, 128.0823136070988,'<div style="padding:5px">봉래할인마트</div>'],
+[35.19536513738685, 128.0770779404735,'<div style="padding:5px">북천삼거리</div>'],
+[35.19849438764883, 128.07264778032703,'<div style="padding:5px">사천수협수산물백화점->상봉바다마트</div>'],
+[35.16970026332126, 128.0526665801227,'<div style="padding:5px">산앤들 푸드마켓->나들가게평거할인마트(확실x,번호다름)</div>'],
+[35.18237546666877, 128.08404122138856,'<div style="padding:5px">삼성마트</div>'],
+[35.16171536298522, 128.1119313512831,'<div style="padding:5px">삼양콩짜장</div>'],
+[35.19669428087319, 128.0726940705532,'<div style="padding:5px">상봉할인마트(네이버에 뜬거랑 구글이랑 다름 근데 구글거가 번호가 맞음)</div>'],
+[35.197041485499255, 128.07769739414326,'<div style="padding:5px">서부마트</div>'],
+[35.168689651688304, 128.0528963585085,'<div style="padding:5px">서부할인마트</div>'],
+[35.23810342140515, 128.09179651630453,'<div style="padding:5px">서월탑훼미리마트</div>'],
+[35.192683521474045, 128.11448381002123,'<div style="padding:5px">선학할인마트(같은건물에 cu진주하대사랑점 있)</div>'],
+[35.186254603303006, 128.06493786906105,'<div style="padding:5px">세우마트</div>'],
+[35.16766805411367, 128.05016004801874,'<div style="padding:5px">세원마트</div>'],
+[35.191708819202226, 128.09088149991837,'<div style="padding:5px">세진하나로마트</div>'],
+[35.19837375020517, 127.93015650642378,'<div style="padding:5px">수곡농협</div>'],
+[35.16710751293181, 127.9535993386218,'<div style="padding:5px">수곡농협원당지소</div>'],
+[35.198161274003745, 127.93179930532875,'<div style="padding:5px">수곡스토아</div>'],
+[35.19810922541787, 127.92980596520113,'<div style="padding:5px">수곡식육식당->왕의갈비(확실x,번호는맞)</div>'],
+[35.19377808381606, 128.1264377997801,'<div style="padding:5px">수연마트</div>'],
+[35.16885912467486, 128.16208269990273,'<div style="padding:5px">스카이마트</div>'],
+[35.16765241855873, 128.05016438241793,'<div style="padding:5px">승국상사</div>'],
+[35.18187720624774, 128.1096437136991,'<div style="padding:5px">시장스토아</div>'],
+[35.17036840928943, 128.16805937819478,'<div style="padding:5px">시장할인마트</div>'],
+[35.17036840928943, 128.16805937819478,'<div style="padding:5px">시장할인마트</div>'],
+[35.20266460952295, 128.1130073605608,'<div style="padding:5px">시티할인마트</div>'],
+[35.19753044044749, 128.0843574981629,'<div style="padding:5px">식자재도매유통</div>'],
+[35.194371040680345, 128.08908048339333,'<div style="padding:5px">신경남스토아</div>'],
+[35.232728655213116, 127.96026370791176,'<div style="padding:5px">신대평마트</div>'],
+[35.19030063407158, 128.0688547362414,'<div style="padding:5px">신안할인마트</div>'],
+[35.19482784055689, 128.06016229534487,'<div style="padding:5px">신천지할인마트</div>'],
+[35.184510703143104, 128.08648860958107,'<div style="padding:5px">썬할인마트</div>'],
+[35.19378923278642, 128.12642987757513,'<div style="padding:5px">씨스페이스 하대점</div>'],
+[35.17461614212729, 128.06169366762086,'<div style="padding:5px">씨유(CU) SK진주주유소점</div>'],
+[35.149553189700406, 128.10212122500246,'<div style="padding:5px">씨유(CU) 가좌주공점</div>'],
+[35.17651013528967, 128.09565507950134,'<div style="padding:5px">씨유(CU) 경대병원점</div>'],
+[35.156327222651534, 128.1058837614913,'<div style="padding:5px">씨유(CU) 경대후문점</div>'],
+[35.15070664237176, 128.09802946444404,'<div style="padding:5px">씨유(CU) 경상대느티마루점</div>'],
+[35.15319220831471, 128.10713617681986,'<div style="padding:5px">씨유(CU) 경상대정문점</div>'],
+[35.152064114350075, 128.1054450602668,'<div style="padding:5px">씨유(CU) 경상프라자점</div>'],
+[35.217083969156526, 128.1454197374678,'<div style="padding:5px">씨유(CU) 금산아이파크점</div>'],
+[35.170862359089305, 128.1614779876532,'<div style="padding:5px">씨유(CU) 문산IC점</div>'],
+[35.18550694092511, 128.11821316646163,'<div style="padding:5px">씨유(CU) 상대대복점</div>'],
+[35.184317395874295, 128.11576292916462,'<div style="padding:5px">씨유(CU) 상대중앙점->GS25진주상대로점</div>'],
+[35.18003020136567, 128.11474630399454,'<div style="padding:5px">씨유(CU) 상대한보점->이마트24</div>'],
+[35.188745585953, 128.0702725118419,'<div style="padding:5px">씨유(CU) 신안로타리점</div>'],
+[35.17813570115298, 128.09509868521593,'<div style="padding:5px">씨유(CU) 의대칠암점</div>'],
+[35.19414958697393, 128.05931677203105,'<div style="padding:5px">씨유(CU) 이현웰가점</div>'],
+[35.18732206579341, 128.22477391128035,'<div style="padding:5px">씨유(CU) 진성IC점</div>'],
+[35.15395554858553, 128.1068409817283,'<div style="padding:5px">씨유(CU) 진주가좌대영점</div>'],
+[35.15850374490561, 128.10550388105668,'<div style="padding:5px">씨유(CU) 진주가좌점</div>'],
+[35.164441933266396, 128.10802351830432,'<div style="padding:5px">씨유(CU) 진주가호올리움점</div>'],
+[35.180658299497985, 128.0900754422245,'<div style="padding:5px">씨유(CU) 진주강남대경점</div>'],
+[35.18305231758521, 128.09564655546134,'<div style="padding:5px">씨유(CU) 진주강남로점</div>'],
+[35.16239912711914, 128.11612560182988,'<div style="padding:5px">씨유(CU) 진주개양점</div>'],
+[35.19534352580081, 128.08117757472644,'<div style="padding:5px">씨유(CU) 진주계동2호점</div>'],
+[35.19534655187221, 128.08123497142552,'<div style="padding:5px">씨유(CU) 진주계동점</div>'],
+[35.18605449846897, 128.06719201975577,'<div style="padding:5px">씨유(CU) 진주교대정문점</div>'],
+[35.18339808591037, 128.09009058584041,'<div style="padding:5px">씨유(CU) 진주남가람점->이마트 진주칠암점</div>'],
+[35.1702671863564, 128.11769368470678,'<div style="padding:5px">씨유(CU) 진주대교주유소점</div>'],
+[35.192343787531776, 128.1217156388176,'<div style="padding:5px">엄마의 부엌</div>'],
+[35.19474290337857, 128.07392794470806,'<div style="padding:5px">에이스마트</div>'],
+[35.176195636832226, 128.09208306082562,'<div style="padding:5px">엘에스슈퍼진주주약점</div>'],
+[35.1842868549247, 128.11466205248172,'<div style="padding:5px">연화슈퍼</div>'],
+[35.1150654438644, 128.09253037200187,'<div style="padding:5px">예하리슈퍼</div>'],
+[35.19532484707576, 128.11244977438426,'<div style="padding:5px">오렌지마트</div>'],
+[35.18279031280154, 128.10761653174498,'<div style="padding:5px">오렌지마트</div>'],
+[35.219576244532135, 128.14679794104754,'<div style="padding:5px">오빠야마트</div>'],
+[35.16378008843582, 128.10737510779262,'<div style="padding:5px">용우동</div>'],
+[35.1979031264687, 128.07918523256058,'<div style="padding:5px">우리들마트</div>'],
+[35.198789640575384, 128.07927358350486,'<div style="padding:5px">우리들마트리더점</div>'],
+[35.18499288193664, 128.08373398970036,'<div style="padding:5px">우리슈퍼 진주망경점</div>'],
+[35.15040645522203, 128.10245185812786,'<div style="padding:5px">우리마트가좌점</div>'],
+[35.215200870206225, 128.14594086230343,'<div style="padding:5px">우리마트금산점</div>'],
+[35.196343188370705, 128.09316394914592,'<div style="padding:5px">우리슈퍼옥봉점</div>'],
+[35.17619701979997, 128.09209629679853,'<div style="padding:5px">우리슈퍼주약점</div>'],
+[35.18459886799705, 128.08603749005132,'<div style="padding:5px">우리축산</div>'],
+[35.175114370631405, 128.10235537917697,'<div style="padding:5px">우리축산(우리농축산)</div>'],
+[35.17095625620873, 128.11251606680813,'<div style="padding:5px">유나상사(위치변경 해당인지확인요망)</div>'],
+[35.19370769732916, 128.12514927786557,'<div style="padding:5px">이룸마트(나들가게이룸마트)</div>'],
+[35.21394003268921, 128.1403460949142,'<div style="padding:5px">이마트24진주금산점</div>'],
+[35.187171194276075, 128.05893785699286,'<div style="padding:5px">이현마트->나들가게코사마트이현점(아마바뀐듯 확인필요,번호다름)</div>'],
+[35.21506818345418, 128.10234630369763,'<div style="padding:5px">일신외식산업</div>'],
+[35.17822445443175, 128.10625440622678,'<div style="padding:5px">자이할인마트</div>'],
+[35.16876841910115, 128.16256243739738,'<div style="padding:5px">정아네 김밥</div>'],
+[35.17155466949604, 128.13135409270495,'<div style="padding:5px">정이네정육점</div>'],
+[35.19284276351207, 128.11890733533602,'<div style="padding:5px">제주어멍해장국진주하대점</div>'],
+[35.196249675682026, 128.07814757807282,'<div style="padding:5px">제주올레면옥진주점</div>'],
+[35.17705740452102, 128.06901628805647,'<div style="padding:5px">조은할인마트</div>'],
+[35.19816285665071, 128.08417297961415,'<div style="padding:5px">종합할인마트</div>'],
+[35.184743139228146, 128.07444191614795,'<div style="padding:5px">휴마트 진주점</div>'],
+[35.209744044142944, 128.1028144712484,'<div style="padding:5px">중부농협로컬푸드직매장</div>'],
+[35.3187639310876, 128.09023499554056,'<div style="padding:5px">중부농협안간지점</div>'],
+[35.3009171172522, 128.11535456684808,'<div style="padding:5px">중부농협오방지점</div>'],
+[35.23929334418739, 128.0861832232608,'<div style="padding:5px">중부농협협동조합</div>'],
+[35.17381415654997, 128.06541537233426,'<div style="padding:5px">지마트</div>'],
+[35.18722921504403, 128.2242091693206,'<div style="padding:5px">하나마트</div>'],
+[35.23853942612949, 128.09028982569367,'<div style="padding:5px">진솔할인마트</div>'],
+[35.16879935642615, 128.32627760593917,'<div style="padding:5px">진양농협이반성지점</div>'],
+[35.23433494679745, 128.2698205265298,'<div style="padding:5px">진양농협지수지점</div>'],
+[35.21741754221632, 128.14610128860784,'<div style="padding:5px">진주금산파리바게뜨</div>'],
+[35.19354389019374, 128.074366864453,'<div style="padding:5px">진주김밥앤샐러드</div>'],
+[35.215096035450024, 128.03764562930385,'<div style="padding:5px">진주문산농협하나로마트</div>'],
+[35.21499078844827, 128.03748138084086,'<div style="padding:5px">진주북부농업협동조합</div>'],
+[35.194698836102255, 128.06898388349728,'<div style="padding:5px">진주서부농협 상봉하나로</div>'],
+[35.21102843136346, 128.1234068902193,'<div style="padding:5px">진주원예농업협동조합마트</div>'],
+[35.191608842162104, 128.09084230059258,'<div style="padding:5px">진주원예농협옥본지소</div>'],
+[35.174664340324256, 128.15193786282327,'<div style="padding:5px">진주중부농협로컬푸드3호</div>'],
+[35.172019302075135, 128.27604207991453,'<div style="padding:5px">진주진양농협하나로마트</div>'],
+[35.17237761401205, 128.14880629683447,'<div style="padding:5px">진주축산농협하나로마트</div>'],
+[35.182253037551135, 128.06719656231914,'<div style="padding:5px">진주축협평거지점하나로마</div>'],
+[35.1671734571659, 128.16360395459455,'<div style="padding:5px">착한족발한우축산물도매센</div>'],
+[35.179469505392085, 128.11045029690624,'<div style="padding:5px">참마트</div>'],
+[35.17781963467246, 128.10754580021927,'<div style="padding:5px">축석할인마트</div>'],
+
+          ]
+        // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+        function makeOverListener(map, marker, infowindow) {
+            return function() {
+                infowindow.open(map, marker);
+            };
+        }
+     // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+        function makeOutListener(infowindow) {
+            return function() {
+                infowindow.close();
+            };
+        }
+		
+		
+		
+		for(var i=0;i<데이터.length;i++){
+			// 마커가 표시될 위치입니다 
+			var markerPosition  = new kakao.maps.LatLng(데이터[i][0],데이터[i][1]); 
+
+			// 마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+			    position: markerPosition
+			});
+
+			// 마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);
+			var iwContent = 데이터[i][2];
+		    iwPosition = markerPosition //인포윈도우 표시 위치입니다
+
+		// 인포윈도우를 생성합니다
+		var infowindow = new kakao.maps.InfoWindow({
+		    position : iwPosition, 
+		    content : iwContent 
+		});
+		  
+		
+		markers.push(marker);
+		
+		
+		
+		kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+	    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+			
+		}
+		// 클러스터러에 마커들을 추가합니다
+        clusterer.addMarkers(markers);
+		
+     
+
+		
+	</script>
+ 
+
+{% endblock %}

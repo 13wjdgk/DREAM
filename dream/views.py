@@ -38,3 +38,6 @@ def mem_info(request):
     return render(request,"mem_info.html")
 def card(request):
     return render(request,"card.html")
+
+def member(request):
+    return render(request,"member.html")

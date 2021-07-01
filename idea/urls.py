@@ -33,5 +33,6 @@ urlpatterns = [
     path('mypage/',dream.views.mypage,name="mypage"),
     path('mem_info/',dream.views.mem_info,name="mem_info"),
     path('card/', dream.views.card, name="card"),
+    path('member/',dream.views.member, name="member"),
 ]
 

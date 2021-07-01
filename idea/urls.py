@@ -35,5 +35,6 @@ urlpatterns = [
     path('mem_info/',dream.views.mem_info,name="mem_info"),
     path('card/', dream.views.card, name="card"),
     path('account/',include('account.urls')), 
+    path('member/',dream.views.member, name="member"),
 ]
 

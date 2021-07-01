@@ -30,10 +30,14 @@ urlpatterns = [
     path('notify/',dream.views.notify,name="notify"),
     path('notifycom/',dream.views.notifycom,name="notifycom"),
     path('ask/',dream.views.ask,name="ask"),
-    path('receipt/',dream.views.receipt,name="recipt"),
+    path('receipt/',dream.views.receipt,name="receipt"),
     path('mypage/',dream.views.mypage,name="mypage"),
     path('mem_info/',dream.views.mem_info,name="mem_info"),
     path('card/', dream.views.card, name="card"),
     path('account/',include('account.urls')), 
+
+    path('dream_map/', dream.views.dream_map, name="dream_map"),
+    path('member/',dream.views.member, name="member"),
+
 ]
 

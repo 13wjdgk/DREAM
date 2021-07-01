@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 import dream.views
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +34,7 @@ urlpatterns = [
     path('mypage/',dream.views.mypage,name="mypage"),
     path('mem_info/',dream.views.mem_info,name="mem_info"),
     path('card/', dream.views.card, name="card"),
+    path('account/',include('account.urls')), 
 
     path('dream_map/', dream.views.dream_map, name="dream_map"),
     path('member/',dream.views.member, name="member"),

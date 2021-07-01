@@ -7,18 +7,22 @@
 <link rel="stylesheet" href="{% static 'css/signup.css'%}">
 <div class="b-div">
     <div class="s-div">
-        <form action="#">
+        <form action="{% url 'signup' %}" method="POST"></form>
             <h2>회원가입</h2>
             <hr>
             <h5>로그인 정보</h5>
             <div class="login_info">
                 <div class="container">
+                        {% csrf_token %}
+                        <center>{{form}}</center>
+                        <input type="submit" value="제출">
+        </form>
                     <div class="row">
                         <div class="col-2">
                             <p style="display: inline;">아이디</p>
                         </div>
                         <div class="col-4">
-                            <input class=" id_form form-control form-control-sm" type="text" placeholder="아이디를 입력하세요" aria-label=".form-control-sm example">
+                            {{form.username}}
                         </div>
                         <div class="col-1">
 
@@ -31,19 +35,19 @@
                         <p style="display: inline;">비밀번호</p>
                         </div>
                         <div class="col-4">
-                        <input class=" id_form form-control form-control-sm" type="text" placeholder="아이디를 입력하세요" aria-label=".form-control-sm example">
+                        {{form.password}}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-2">
-                            <p style="display: inline;">비밀번호 확인</p>
+                            <!-- <p style="display: inline;">비밀번호 확인</p> -->
                         </div>
                         <div class="col-4">
-                            <input class=" id_form form-control form-control-sm" type="text" placeholder="아이디를 입력하세요" aria-label=".form-control-sm example">
+                            <!-- {{form.password_Confirm}} -->
                         </div>
                         <div class="col-1">
 
-                            <button class="" type="submit">확인</button>
+                            <!-- <button class="" type="submit">확인</button> -->
 
                         </div>
                     </div>
@@ -62,7 +66,8 @@
                             <p style="display: inline;">이름</p>
                         </div>
                         <div class="col-4">
-                            <input class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example">
+                            {{form.name}}
+                            <!-- <input name="name" class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"> -->
                         </div>
                     </div>
                     <div class="row">
@@ -70,12 +75,15 @@
                         <p style="display: inline;">출생년도</p>
                         </div>
                         <div class="col">
-                            <input style="width: 10%; display: inline;"class=" id_form form-control form-control-sm" type="text" aria-label=".form-control-sm example"><p style="display: inline;" > 년</p>
+                            
+                            
+                            
+                            {{form.birth}}
                         
-                            <input style="width: 5%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"><p style="display: inline;" > 월</p>
+                            <!-- <input name="birth_month" style="width: 5%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"><p style="display: inline;" > 월</p> -->
                         
                         
-                            <input style="width: 5%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"><p style="display: inline;" > 일</p>
+                            <!-- <input name="birth_day" style="width: 5%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"><p style="display: inline;" > 일</p> -->
                         </div>
                         
                     </div>
@@ -84,9 +92,10 @@
                             <p style="display: inline;"> 이메일 </p>
                         </div>
                         <div class="col input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                            {{form.email}}
+                            <!-- <input name="email_id" type="text" class="form-control" placeholder="Username" aria-label="Username">
                             <span class="input-group-text">@</span>
-                            <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                            <input name="email_back" type="text" class="form-control" placeholder="Server" aria-label="Server"> -->
                           </div>
                         
                     </div>
@@ -95,11 +104,12 @@
                         <p style="display: inline;">전화번호</p>
                         </div>
                         <div class="col">
-                            <input style="width: 7%; display: inline;"class=" id_form form-control form-control-sm" type="text" aria-label=".form-control-sm example"><p style="display: inline;" > -</p>
+                            {{form.phone}}
+                            <!-- <input name="phone_one" style="width: 7%; display: inline;"class=" id_form form-control form-control-sm" type="text" aria-label=".form-control-sm example"><p style="display: inline;" > -</p>
                         
-                            <input style="width: 7%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"><p style="display: inline;" > -</p>
+                            <input name="phone_two" style="width: 7%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"><p style="display: inline;" > -</p>
                                
-                            <input style="width: 7%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example">
+                            <input name="phone_three" style="width: 7%; display: inline;"class=" id_form form-control form-control-sm" type="text"  aria-label=".form-control-sm example"> -->
                         </div>
                         
                     </div>
@@ -125,11 +135,13 @@
 
                         </div>
                     </div>
-                    <div>
+                    <div class="sign">
             
                         <center>
-                            <button style="width:20%" class="" type="submit">가입하기</button>
+                            <button style="width: 20%;" class="" type="submit">가입하기</button>
+                            <input type="submit" value="제출하기">
                         </center>
+                        
                         
 
                     </div>
@@ -138,7 +150,7 @@
                 
 
             </div>
-        </form>
+        
     </div>
      
 </div>

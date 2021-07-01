@@ -22,6 +22,7 @@ h5{
 .id_form{
     width: 300px;
 }
+
 button{
     border-radius: 8px;
     width: 80px;
@@ -29,6 +30,7 @@ button{
     background-color: #F8E982;
     color: black;
 }
+
 .row{
     padding-bottom: 1%;
 }

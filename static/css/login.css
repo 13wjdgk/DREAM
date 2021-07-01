@@ -35,6 +35,7 @@ form {
     margin-bottom: 1.5%;
 }
 
+
 .login_pwd {
     display: inline-block;
     width: 30%;
@@ -49,10 +50,10 @@ div input {
     padding: 0 3%;
 }
 
-.submit {
+.sub {
     display: inline-block;
-    width: 20%;
-    height: 100%;
+    width: 55%;
+    height: 45px;
     font-weight: bold;
     font-size: 16px;
     background-color: rgb(248,233,130);
@@ -62,8 +63,8 @@ div input {
 
 .submit_google {
     display: inline-block;
-    width: 20%;
-    height: 100%;
+    width: 55%;
+    height: 45px;
     font-weight: bold;
     color: white;
     font-size: 16px;
@@ -74,6 +75,7 @@ div input {
     background-size: 34px 34px;
     background-repeat: no-repeat;
     background-position: 10%;
+    
 }
 
 

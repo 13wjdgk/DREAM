@@ -44,5 +44,6 @@ def card(request):
 def dream_map(request):
     return render(request,"dream_map.html")
 
-def map(request):
-    return render(request,"map.html")
+def member(request):
+    return render(request,"member.html")
+

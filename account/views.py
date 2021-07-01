@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user_model
 User = get_user_model()
 from .forms import SignupForm
-# from .forms import SignupForm
+
 
 # Create your views here.
 

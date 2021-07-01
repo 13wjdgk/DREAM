@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css'%}">
+<h1><a href="{% url 'main' %}">DREAM</a></h1>
+
+    <div class="form">
+        <form action="{% url 'login' %}" method="POST" class="login_id">
+            {% csrf_token %}
+            <input name="username" type="text" placeholder="아이디">
+            <br><br>
+            <input name="password" type="password" placeholder="비밀번호">
+            <br>
+            <div class="check">
+                <input type="checkbox" class="box"> ID 기억하기
+            </div>
+        
+
+        <br>
+        <br>
+        <div>
+            <input class="sub" type="submit" value="로그인">
+        </div>
+        <br>
+        <div>
+            <input class="submit_google" type="submit" value="구글계정으로 로그인">
+        </div>
+    </form>
+    <br><br>
+        <p><a href="#">ID찾기 또는 비밀번호 변경</a></p>
+        <p><a href="{% url 'signup' %}">계정 생성</a></p>
+    </div>
+{% endblock %}

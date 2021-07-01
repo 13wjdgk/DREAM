@@ -2,44 +2,50 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/main.css'%}">
-<div class="main_photo"></div>
-<div class="confirmation">
-    <p class="balance_label">잔액 현황</p>
-    <p class="balance">15,000원</p>
-    <p class="pay"><a href="{% url 'payment' %}">결제하기→</a></p>
-    <p class="breakdown"><a href="#">사용내역</a></p>
+<div class="main_photo">
+    <img class="photo" src="{% static 'image/진짜임시.jpg' %}" alt="뒷배경">
 </div>
+<div class="confirmation">
+    <p class="balance_label">내 잔액현황</p>
+    <p class="balance">15,000원</p>
+    <hr class="balance_hr" style="height: 2px; color: rgb(255, 255, 255);">
+    <p class="breakdown"><a href="#">사용내역→</a></p>
+    <p class="pay"><a href="{% url 'payment' %}">결제하기→</a></p>
+</div>
+<div class="main_intro">
+    <p class="DREAM">DREAM</p>
+    <P class="emphasis">Happy Together 밝고 건강한 세상</P><p class="writing" style="display: inline-block;">을 만들어갑니다.</P>
+    <p class="writing">모든 아이들이 건강하고 행복하게 자랄 수 있도록</p>
+    <p class="writing">급식지원을 통해 결식예방 및 영양개선을 목적으로 하는 서비스 입니다.</p>
+</div>
+<br><br><br>
+<center><p>우리지역 가맹점 찾기</p></center>
 <div class="search_bar">
     <form action="#" class="search_bar2">
-        <input type="text" placeholder="우리지역 가맹점 찾기">
+        <input type="text" placeholder="가맹점 이름을 입력해보세요">
+        <button id="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search.png" alt="돋보기사진" class="icon"/></button>
     </form>
+    <div style="text-align: center;">
+        <a href="{% url 'dream_map' %}"><p style="text-decoration:underline; color: rgb(155, 153, 153);">#꿈나무카드 가맹점 지도</p></a>
+    </div>
 </div>
 
+<div style="width: 84%;" class="hr"><hr></div>
+<center><p>추가적인 기능들과 함께 꿈을 이뤄봐요!</p></center>
 <div class ="button_in">
-    <div class="b1_c">
-        <div class="button1_top_wrap">
-            <form action="#">
-                <button class="button1_top">꿈나무 카드<br>가맹점 찾기</button>
-            </form>
-        </div>
-        <hr class="hr_">
-        <div class="button1_bottom_wrap">
-            <form action="#">
-                <button class="button1_bottom">선한 영향력<br>가게 찾기</button>
-            </form>
-        </div>
-    </div>
-    <div class="b2_c">
-        <form action="#">
-            <button class="button2">배달의 민족</button>
-        </form>
-    </div>
-    <div class="b3_c">
-        <form action="{% url 'point' %}">
-            <button class="button3">포인트 기부</button>
-        </form>
-    </div>
+    <form action="#" class="b1_c">
+        <button class="button1">선한 영향력<br>가게 찾기<hr style="margin: 5% 0%;"><p>설명설명설명서얼명설명<br>설명두번째줄</p><br><p class="go">바로가기→</p></button>
+    </form>
+    <form action="#" class="b2_c">
+        <button class="button2">배달의 민족<br>주문하기<hr style="margin: 5% 0%;"><p>설명설명설명서얼명설명<br>설명두번째줄</p><br><p class="go">바로가기→</p></button>
+    </form>
+    <form action="{% url 'point' %}" class="b3_c">
+        <button class="button3">포인트 기부<br>기부하기<hr style="margin: 5% 0%;"><p>설명설명설명서얼명설명<br>설명두번째줄</p><br><p class="go">바로가기→</p></button>
+    </form>
 </div>    
-<br>
+<br><br><br>
+<div style="width: 84%;" class="hr"><hr></div>
+<br><br><br><br><br>
+
 {% endblock %}
 

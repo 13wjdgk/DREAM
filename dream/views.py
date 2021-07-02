@@ -41,9 +41,5 @@ def mem_info(request):
 def card(request):
     return render(request,"card.html")
 
-def dream_map(request):
-    return render(request,"dream_map.html")
-
 def member(request):
     return render(request,"member.html")
-

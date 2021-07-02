@@ -2,26 +2,30 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/member.css' %}">
-<div class="map_wrap">
+<div id="mapwrap"> 
+    <!-- 지도가 표시될 div -->
     <div id="map"></div>
-    <ul id="category">
-        <li id="BK9" data-order="0"> 
-            <span class="category_bg store"></span>
-            편의점
-        </li>       
-        <li id="MT1" data-order="1"> 
-            <span class="category_bg mart"></span>
-            마트
-        </li>  
-        <li id="PM9" data-order="2"> 
-            <span class="category_bg restaurant"></span>
-            식당
-        </li>  
-        <li id="OL7" data-order="3"> 
-            <span class="category_bg other"></span>
-            기타
-        </li>  
-    </ul>
+    <!-- 지도 위에 표시될 마커 카테고리 -->
+    <div class="category">
+        <ul>
+            <li id="storeMenu" onclick="changeMarker('store')">
+                <span class="ico_comm ico_store"></span>
+                편의점
+            </li>
+            <li id="martMenu" onclick="changeMarker('mart')">
+                <span class="ico_comm ico_mart"></span>
+                마트
+            </li>
+            <li id="restaurantMenu" onclick="changeMarker('restaurant')">
+                <span class="ico_comm ico_restaurant"></span>
+                식당
+            </li>
+            <li id="othersMenu" onclick="changeMarker('others')">
+                <span class="ico_comm ico_others"></span>
+                기타
+            </li>
+        </ul>
+    </div>
 </div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	89275d9ab9b074c6b650b4b1f1e49c3b"></script>
 <script type="text/javascript" src="{% static 'js/member.js' %}"></script>

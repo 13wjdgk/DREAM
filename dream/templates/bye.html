@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/bye.css'%}">
+    <div class="container">
+        <div class="header">
+            <h1 style="font-size: 45px;" ><strong>DREAM</strong></h1>
+            <hr class="one">
+        </div>
+        
+        <div class="main">
+            <center>
+            <h2><strong>회원 탈퇴가 정상적으로 처리되었습니다.</strong></h2><br>
+            <br>
+            <p style="font-size: 25px;">저희 DREAM에 주신 관심과 사랑 잊지 않겠습니다.</p><br>
+            <p style="font-size: 25px;">감사합니다.</p><br>
+
+            <div class="wrap">
+                <a href="{% url 'logout' %}" class="button" style="font-size: 13px;"><strong>메인으로 돌아가기</strong></a>
+            </div>
+        </center>
+        </div>
+        
+    </div>
+    {% endblock %}

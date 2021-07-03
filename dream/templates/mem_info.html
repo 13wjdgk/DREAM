@@ -7,11 +7,11 @@
 <link rel="stylesheet" href="{% static 'css/mem_info.css'%}">
 <div class="b-div">
     <div class="s-div">
-        <form action="#">
+        
             <h2>회원정보 수정</h2>
-            <a href="#" style="width:100%; padding-left:90%;">탈퇴하기</a>
+            <a href="{% url 'bye' %}" style="width:100%; padding-left:90%;">탈퇴하기</a>
             <hr>
-            
+        <form action="{% url 'main' %}">
             <h5>로그인 정보</h5>
             <div class="login_info">
                 <div class="container">

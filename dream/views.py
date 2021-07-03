@@ -47,3 +47,5 @@ def dream_map(request):
 def member(request):
     return render(request,"member.html")
 
+def bye(request):
+    return render(request,"bye.html")

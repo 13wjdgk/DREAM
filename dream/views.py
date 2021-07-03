@@ -43,3 +43,6 @@ def card(request):
 
 def member(request):
     return render(request,"member.html")
+
+def member2(request):
+    return render(request,"member2.html")

@@ -13,6 +13,7 @@ var cafePositions = [
     {content: '<div>편의점</div>',latlng: new kakao.maps.LatLng(35.15600240603645, 128.10773178267726)}
 ];
 
+
 // 식당 마커가 표시될 좌표 배열입니다.
 var restaurantPositions = [
     {content: '<div>제주어멍해장국진주하대점</div>', latlng: new kakao.maps.LatLng(35.19284276351207, 128.11890733533602)},

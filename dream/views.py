@@ -46,3 +46,6 @@ def member(request):
 
 def member2(request):
     return render(request,"member2.html")
+
+def bye(request):
+    return render(request,"bye.html")

@@ -37,6 +37,6 @@ urlpatterns = [
     path('account/',include('account.urls')), 
     path('member/',dream.views.member, name="member"),
     path('member2/',dream.views.member2, name="member2"),
-
+    path('bye/',dream.views.bye, name="bye"),
 ]
 

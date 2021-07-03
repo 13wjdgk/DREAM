@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+   <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <nav id=header class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand logo" href="{% url 'main' %}">DREAM</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <div class="nav_text">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a style="width:120%; padding-left: 8%;"class="nav-link" href="{% url 'Info' %}">안내</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="width:120%; padding-left: 8%;" class="nav-link" href="{% url 'notifyhome' %}">신고</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="width:120%; padding-left: 8%;" class="nav-link" href="{% url 'ask' %}">문의/건의</a>
+                        </li>   
+                       
+                        <li class="nav-item">
+                            <a style="width:120%; padding-left: 8%;" class="nav-link" href="{% url 'login' %}">로그인</a>
+                        </li>
+                        
+                    </ul> 
+              </div>
+           </div>
+        </div>
+    </nav>
+    
+
+    {% block content %}
+
+    {% endblock %}
+  
+    <link rel="stylesheet" href="{% static 'css/bye.css'%}">
+    <br>
+    <div class="container">
+        <div class="header">
+            <h1 style="font-size: 40px;" ><strong>회원탈퇴 안내</strong></h1>
+            <hr class="one">
+        </div>
+        
+
+        <center>
+        <h2><strong>회원탈퇴가 완료 되었습니다.</strong></h2><br>
+        <p style="font-size: 25px;">DREAM에게 주신 관심과 사랑 잊지 않겠습니다.</p><br>
+        <p style="font-size: 25px;">감사합니다.</p><br>
+        <div class="wrap">
+             <a href="{% url 'logout' %}" class="button" style="font-size: 13px;"><strong>메인으로 돌아가기</strong></a>
+        </div>
+            
+        </center>
+
+        
+    </div>
+</body>
+</html> 

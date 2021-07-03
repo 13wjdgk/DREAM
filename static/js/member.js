@@ -1,6 +1,5 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
-        //center: new kakao.maps.LatLng(37.498004414546934, 127.02770621963765), // 지도의 중심좌표(서울역)
         center: new kakao.maps.LatLng(35.15386803378726, 128.10165993751255), // 지도의 중심좌표(진주) 
         level: 7 // 지도의 확대 레벨 
     }; 
@@ -9,15 +8,40 @@ var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니
 
 // 편의점 마커가 표시될 좌표 배열입니다
 var storePositions = [
-    {content: '<div>카카오</div>', latlng: new kakao.maps.LatLng(35.15258952858998, 128.10595046718052)},
-    {content: '<div>편의점</div>',latlng: new kakao.maps.LatLng(35.15600240603645, 128.10773178267726)}
-
+    {content: '<div>GS25가좌중앙점</div>', latlng: new kakao.maps.LatLng(35.15600240603645, 128.10773178267726)},
+    {content: '<div>>GS25경상대정문점</div>',latlng: new kakao.maps.LatLng(35.15258952858998, 128.10595046718052)},
+    {content: '<div>GS25경상대학사점</div>',latlng: new kakao.maps.LatLng(35.15676683031992, 128.1018390546308)},
+    {content: '<div>GS25경상의대점</div>',latlng: new kakao.maps.LatLng(35.17761525866964, 128.0934559334509)},
+    {content: '<div>GS25과기대학사점</div>',latlng: new kakao.maps.LatLng(35.17892980761595, 128.09495783473628)},
+    {content: '<div>GS25국제대기숙사점</div>',latlng: new kakao.maps.LatLng(35.19729768803995, 128.08052868252577)},
+    {content: '<div>GS25금산번영점</div>',latlng: new kakao.maps.LatLng(35.2179268165712, 128.14608832182137)},
+    {content: '<div>GS25기숙사후문점</div>',latlng: new kakao.maps.LatLng(35.158404142645104, 128.10051711785798)},
+    {content: '<div>GS25봉곡사랑점</div>',latlng: new kakao.maps.LatLng(35.19416682149059, 128.07116715244538)},
+    {content: '<div>GS25봉곡햇살점</div>',latlng: new kakao.maps.LatLng(35.19581139142863, 128.07994740064038)},
+    {content: '<div>GS25봉곡행복점</div>',latlng: new kakao.maps.LatLng(35.19424362142424, 128.07364086850248)},
+    {content: '<div>GS25상대한보점</div>',latlng: new kakao.maps.LatLng(35.18194437880328, 128.11483769430774)},
+    {content: '<div>GS25상대현대점</div>',latlng: new kakao.maps.LatLng(35.18464714313412, 128.11308945713222)},
+    {content: '<div>GS25상평공단점</div>',latlng: new kakao.maps.LatLng(35.170988059317814, 128.11306815351298)},
+    {content: '<div>GS25신안들말점</div>',latlng: new kakao.maps.LatLng(35.185104092887315, 128.07376144974916)},
+    {content: '<div>GS25신안주공점</div>',latlng: new kakao.maps.LatLng(35.17758805082067, 128.06731752952732)},
+    {content: '<div>GS25진주IC점</div>',latlng: new kakao.maps.LatLng(35.176626137091745, 128.11742376969414)},
+    {content: '<div>GS25진주MBC점</div>',latlng: new kakao.maps.LatLng(35.16316243510096, 128.10710247944195)},
+    {content: '<div>GS25진주개양점</div>',latlng: new kakao.maps.LatLng(35.15963352343042, 128.10659431181463)},
+    {content: '<div>GS25진주경상대점</div>',latlng: new kakao.maps.LatLng(35.15775547650414, 128.1052161250116)}
 ];
 
 // 마트 마커가 표시될 좌표 배열입니다
 var martPositions = [ 
-    {content: '<div>카카오</div>', latlng: new kakao.maps.LatLng(35.17761525866964, 128.0934559334509)},
-    {content: '<div>편의점</div>',latlng: new kakao.maps.LatLng(35.17892980761595, 128.09495783473628)}
+    {content: '<div>OK마트 상평점</div>', latlng: new kakao.maps.LatLng(35.17431070028735, 128.10457116869875)},
+    {content: '<div>OK수퍼마켓하대점</div>',latlng: new kakao.maps.LatLng(35.19005996161425, 128.11936159939393)},
+    {content: '<div>OK할인마트</div>',latlng: new kakao.maps.LatLng(35.16998540911988, 128.05217846028842)},
+    {content: '<div>삼전마트</div>',latlng: new kakao.maps.LatLng(35.19984877313252, 128.08452854212396)},
+    {content: '<div>필마트</div>',latlng: new kakao.maps.LatLng(35.1956611014077, 128.0704217595862)},
+    {content: '<div>가람마트</div>',latlng: new kakao.maps.LatLng(35.17479028874534, 128.09259142236684)},
+    {content: '<div>휴마트</div>',latlng: new kakao.maps.LatLng(5.16301871067075, 128.10830152977118)},
+    {content: '<div>나들가게굿모닝마트 상평점</div>',latlng: new kakao.maps.LatLng(35.16995870583871, 128.1112284517441)},
+    {content: '<div>진주금곡농협</div>',latlng: new kakao.maps.LatLng(35.092048203052094, 128.18739090918933)},
+    {content: '<div>세진하나마트</div>',latlng: new kakao.maps.LatLng(35.19567722588272, 128.11525629787207)}
 ];
 
 // 식당 마커가 표시될 좌표 배열입니다

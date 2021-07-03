@@ -15,18 +15,18 @@ var cafePositions = [
     {content: '<div>카페미아토</div>', latlng: new kakao.maps.LatLng(35.1856420615009, 128.15709761177294)},
 ];
 
-// 식당 마커가 표시될 좌표 배열입니다
-var restaurantPositions = [
-    {content: '<div>땡초김밥하대점</div>', latlng: new kakao.maps.LatLng(35.192950862397694, 128.11952431721062)},
-    {content: '<div>김쉐프의 족가 진주점</div>', latlng: new kakao.maps.LatLng(35.16019618031902, 128.10579698105707)},
-    {content: '<div>바르원 앤 콩기와</div>', latlng: new kakao.maps.LatLng(35.151199453740844, 128.10520748093705)},
-    {content: '<div>홍콩반점 경상대점</div>', latlng: new kakao.maps.LatLng(35.15231848428394, 128.105904846464)},
-    {content: '<div>하동돈가스</div>', latlng: new kakao.maps.LatLng(35.1527703242942, 128.10752656093777)},
-    {content: '<div>명륜진사갈비 신안점ㄴ</div>', latlng: new kakao.maps.LatLng(35.180803277123836, 128.0656123161934)},
-    {content: '<div>진돈</div>', latlng: new kakao.maps.LatLng(35.171437376563766, 128.0608842069717)},
-    {content: '<div>중앙집</div>', latlng: new kakao.maps.LatLng(35.19170992272867, 128.0858634635384)},
-    {content: '<div>피자마루과기대점</div>', latlng: new kakao.maps.LatLng(35.17879762719946, 128.09553375798626)},
-    {content: '<div>우리집</div>', latlng: new kakao.maps.LatLng(35.21524824224248, 128.1407910179339)},
+
+// 식당 마커가 표시될 좌표 배열입니다.
+    {content: '<div>제주어멍해장국진주하대점</div>', latlng: new kakao.maps.LatLng(35.19284276351207, 128.11890733533602)},
+    {content: '<div>바르원앤콩기와</div>', latlng: new kakao.maps.LatLng(35.151044571028805, 128.10511336889562)},
+    {content: '<div>김쉐프의족가진주점</div>', latlng: new kakao.maps.LatLng(35.16110809599691, 128.10580566205135)},
+    {content: '<div>하동돈가스</div>', latlng: new kakao.maps.LatLng(35.15339077457376, 128.10778285410518)},
+    {content: '<div>홍콩반점 진주경상대점</div>', latlng: new kakao.maps.LatLng(35.15302153195407, 128.1059403773905)},
+    {content: '<div>피자마루 과기대점</div>', latlng: new kakao.maps.LatLng(35.17928676443894, 128.09577665411726)},
+    {content: '<div>중앙집</div>', latlng: new kakao.maps.LatLng(35.19238561483052, 128.08601952343753)},
+    {content: '<div>명륜진사갈비 진주신안점</div>', latlng: new kakao.maps.LatLng(35.18154248480586, 128.0656486774038)},
+    {content: '<div>진돈</div>', latlng: new kakao.maps.LatLng(35.17246678999478, 128.06083724671365)},
+    {content: '<div>우리집</div>', latlng: new kakao.maps.LatLng(35.21993146105499, 128.1421537123474)}   
 ];
 
 // 기타 마커가 표시될 좌표 배열입니다
@@ -35,7 +35,7 @@ var othersPositions = [
     {content: '<div>리하벨헤어</div>', latlng: new kakao.maps.LatLng(35.19185777242459, 128.12224041501963)},
     {content: '<div>동네미장</div>', latlng: new kakao.maps.LatLng(35.181390939790404, 128.1148546791592)},
     {content: '<div>퀸즈</div>', latlng: new kakao.maps.LatLng(35.17477997935662, 128.10101065414284)},
-    {content: '<div>과일가게</div>', latlng: new kakao.maps.LatLng(35.199244058880474, 128.11385897201646)},
+    {content: '<div>과일가게</div>', latlng: new kakao.maps.LatLng(35.199244058880474, 128.11385897201646)}
 ];  
 
 var markerImageSrc = 'https://devtalk.kakao.com/uploads/default/original/2X/f/fa6989c66efd4d981cf946ea501d94f068f4b43f.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다

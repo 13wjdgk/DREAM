@@ -24,3 +24,4 @@ doc/**/*.pdf
 
 pycache/
  *.pyc
+ 

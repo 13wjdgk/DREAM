@@ -36,6 +36,7 @@ urlpatterns = [
     path('card/', dream.views.card, name="card"),
     path('account/',include('account.urls')), 
     path('member/',dream.views.member, name="member"),
+    path('member2/',dream.views.member2, name="member2"),
 
 ]
 
